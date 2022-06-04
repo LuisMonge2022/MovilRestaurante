@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ProyectoMovil</string>
+    <string name="tvtitulologin">INICIAR SESION</string>
+    <string name="etemail">Ingresar Correo</string>
+    <string name="etpassword">Ingresar Contraseña</string>
+    <string name="btningresar">INGRESAR</string>
+    <string name="btnregistrarse">REGISTRARSE</string>
+</resources>
