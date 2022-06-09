@@ -65,7 +65,7 @@
             android:ems="10"
             android:fontFamily="@font/archivo_black"
             android:hint="@string/etemail"
-            android:inputType="textPersonName"
+            android:inputType="textEmailAddress"
             android:textSize="20sp"
             tools:ignore="TouchTargetSizeCheck" />
 
@@ -109,6 +109,7 @@
             app:icon="@drawable/ic_baseline_how_to_reg_24"
             app:iconGravity="textStart"
             app:iconTint="@color/black" />
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
