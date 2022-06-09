@@ -9,7 +9,7 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="0dp"
-        android:layout_height="60dp"
+        android:layout_height="50dp"
         android:background="?android:attr/colorMultiSelectHighlight"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -21,8 +21,9 @@
 
         <Button
             android:id="@+id/btnloguiarse"
-            android:layout_width="0.2dp"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="1dp"
             android:layout_weight="1"
             android:backgroundTint="?android:attr/colorMultiSelectHighlight"
             android:fontFamily="@font/archivo_black"
@@ -33,6 +34,7 @@
             android:id="@+id/textView8"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
             android:layout_weight="1"
             android:fontFamily="@font/archivo_black"
             android:text="BIENVENIDO(A)"
@@ -41,14 +43,19 @@
             android:textSize="14sp" />
 
         <ImageButton
+<<<<<<< HEAD
             android:id="@+id/btnCarrito"
+=======
+            android:id="@+id/imageButton6"
+>>>>>>> 37cc6cffd1823a4ca65da2e2f5f06ec63d7fda2a
             android:layout_width="1dp"
-            android:layout_height="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="5dp"
             android:layout_weight="1"
-            android:backgroundTint="?android:attr/colorMultiSelectHighlight"
-            android:scaleType="fitEnd"
-            app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24"
-            tools:ignore="SpeakableTextPresentCheck" />
+            android:background="?android:attr/colorMultiSelectHighlight"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/ic_baseline_add_shopping_cart_24" />
     </LinearLayout>
 
     <ImageView

@@ -5,4 +5,15 @@
     <string name="etpassword">Ingresar Contraseña</string>
     <string name="btningresar">INGRESAR</string>
     <string name="btnregistrarse">REGISTRARSE</string>
+
+    <string name="tvtituloregistro">REGISTRO USUARIO</string>
+    <string name="etnombre">Ingresar Nombre</string>
+    <string name="etapellido">Ingresar Apellido</string>
+    <string name="etDNI">Ingresar DNI</string>
+    <string name="ettelefono">Ingresar N° Telefono</string>
+    <string name="etdireccion">Ingresar Direccion</string>
+    <string name="etcorreo">Ingresar Correo</string>
+    <string name="etcontraseña">Ingresar Contraseña</string>
+    <string name="btnregistado">REGISTRADO</string>
+    <string name="btnregresar">Ir al Login</string>
 </resources>

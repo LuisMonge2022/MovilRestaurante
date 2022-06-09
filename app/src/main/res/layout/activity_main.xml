@@ -88,7 +88,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
-            android:backgroundTint="@color/teal_200"
+            android:backgroundTint="@color/teal_700"
             android:fontFamily="@font/archivo_black"
             android:text="@string/btningresar"
             android:textColor="@color/black"
