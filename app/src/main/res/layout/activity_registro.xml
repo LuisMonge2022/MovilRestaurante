@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="260dp"
-        android:layout_height="500dp"
+        android:layout_height="600dp"
         android:layout_marginLeft="1dp"
         android:layout_marginTop="10dp"
         android:scaleType="fitXY"
@@ -31,68 +31,98 @@
 
         <TextView
             android:id="@+id/textView9"
-            android:layout_width="match_parent"
+            android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="20dp"
+            android:background="?android:attr/colorMultiSelectHighlight"
+            android:fontFamily="@font/archivo_black"
+            android:text="@string/tvtituloregistro"
+            android:textAlignment="center"
+            android:textSize="24sp" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName"
+            android:id="@+id/etnombre"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/etnombre"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName2"
+            android:id="@+id/etapellido"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/etapellido"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName3"
+            android:id="@+id/etDNI"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/etDNI"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName4"
+            android:id="@+id/ettelefono"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/ettelefono"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName5"
+            android:id="@+id/etdireccion"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/etdireccion"
+            android:inputType="textPersonName" />
 
         <EditText
-            android:id="@+id/editTextTextPersonName6"
+            android:id="@+id/etcorreo"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:text="Name" />
+            android:hint="@string/etcorreo"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/etcontraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:ems="10"
+            android:hint="@string/etcontraseña"
+            android:inputType="textPersonName" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnregistrado"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/teal_700"
+            android:text="@string/btnregistado"
+            app:icon="@drawable/ic_baseline_how_to_reg_24"
+            app:iconGravity="textStart" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnregresar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@android:color/holo_blue_dark"
+            android:text="@string/btnregresar"
+            app:icon="@drawable/ic_baseline_logout_24"
+            app:iconGravity="textStart" />
+
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
