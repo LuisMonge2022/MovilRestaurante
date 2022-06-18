@@ -10,6 +10,8 @@ data class Cliente(
     val xdni: String,
     val xemail: String,
     val xestado: String,
-    val xnombre: String,
+    var xnombre: String,
     val xtelefono: String
+
+
 )

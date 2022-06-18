@@ -27,7 +27,7 @@
             android:layout_weight="1"
             android:backgroundTint="?android:attr/colorMultiSelectHighlight"
             android:fontFamily="@font/archivo_black"
-            android:text="Iniciar Sesion"
+            android:text="Cerrar Sesion"
             android:textSize="12sp" />
 
         <TextView
@@ -43,11 +43,8 @@
             android:textSize="14sp" />
 
         <ImageButton
-<<<<<<< HEAD
+
             android:id="@+id/btnCarrito"
-=======
-            android:id="@+id/imageButton6"
->>>>>>> 37cc6cffd1823a4ca65da2e2f5f06ec63d7fda2a
             android:layout_width="1dp"
             android:layout_height="40dp"
             android:layout_marginLeft="50dp"

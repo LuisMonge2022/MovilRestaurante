@@ -31,15 +31,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         var email=binding.etemail.text.toString()
         var pasword = binding.etpassword.text.toString()
 
-        if(email==null || pasword==null || email==""|| pasword=="") {
-            Toast.makeText(this@LoginActivity, "Complete los campos requeridos", Toast.LENGTH_LONG).show()
-
-        }else{
-            when (v.id) {
-                R.id.btningresar -> irMenu(email)
-                R.id.btnregistrarse -> irRegistrarse()
-
-            }
+        when (v.id) {
+            R.id.btningresar ->  irMenu(email, pasword )
+            R.id.btnregistrarse -> irRegistrarse()
 
         }
 
@@ -52,27 +46,33 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         startActivity(intent)
     }
 
-    private fun irMenu(email:String) {
-        val intent = Intent(this,
-        MenuActivity::class.java)
-        val clienteService : ClienteService = RestEngine.getRestEngine().create(ClienteService::class.java)
-        val result: Call<Cliente> = clienteService.buscarxEmail(email)
-        //val codigo =result.request()
-        result.enqueue(object :Callback<Cliente>{
-            override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
-                val clienteItem = response.body()
-                if (clienteItem?.codcliente!= null) {
-                    validarUsuario( clienteItem)
-                }else{
-                    Toast.makeText(this@LoginActivity, "Usuario no existe", Toast.LENGTH_LONG).show()
+    private fun irMenu(email:String, pasword: String) {
+
+        if(email==null || pasword==null || email==""|| pasword=="") {
+            Toast.makeText(this@LoginActivity, "Complete los campos requeridos", Toast.LENGTH_LONG).show()
+
+        }else{
+            val clienteService : ClienteService = RestEngine.getRestEngine().create(ClienteService::class.java)
+            val result: Call<Cliente> = clienteService.buscarxEmail(email)
+            //val codigo =result.request()
+            result.enqueue(object :Callback<Cliente>{
+                override fun onResponse(call: Call<Cliente>, response: Response<Cliente>) {
+                    val clienteItem = response.body()
+                    if (clienteItem?.codcliente!= null) {
+                        validarUsuario( clienteItem)
+                    }else{
+                        Toast.makeText(this@LoginActivity, "Usuario no existe", Toast.LENGTH_LONG).show()
+                        limpiarCampos()
+                    }
                 }
-            }
 
-            override fun onFailure(call: Call<Cliente>, t: Throwable) {
-                Toast.makeText(this@LoginActivity, "Error", Toast.LENGTH_LONG).show()
-            }
+                override fun onFailure(call: Call<Cliente>, t: Throwable) {
+                    Toast.makeText(this@LoginActivity, "Error", Toast.LENGTH_LONG).show()
+                    limpiarCampos()
+                }
 
-        })
+            })
+        }
 
     }
 
@@ -88,6 +88,14 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             Toast.makeText(this@LoginActivity, "Bienvenido $mensaje", Toast.LENGTH_LONG)
                 .show()
         }
+
+    }
+
+    private fun limpiarCampos(){
+        binding.etemail.setText("")
+        binding.etpassword.setText("")
+        binding.etemail.isFocusableInTouchMode= true
+        binding.etemail.requestFocus()
 
     }
 }

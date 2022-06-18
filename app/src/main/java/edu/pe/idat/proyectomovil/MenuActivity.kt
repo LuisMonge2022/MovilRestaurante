@@ -20,14 +20,23 @@ class MenuActivity : AppCompatActivity(),View.OnClickListener {
 
         binding.btnloguiarse.setOnClickListener(this)
         binding.btnCarrito.setOnClickListener(this)
+        binding.btnCombos.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
         when(v.id){
             R.id.btnloguiarse -> irLogin()
             R.id.btnCarrito -> irCarrito()
+            R.id.btnCombos -> verProductos()
 
         }
+    }
+
+    private fun verProductos() {
+
+        val intent = Intent(this,
+            ListaProductosActivity::class.java)
+        startActivity(intent)
     }
 
     private fun irCarrito() {

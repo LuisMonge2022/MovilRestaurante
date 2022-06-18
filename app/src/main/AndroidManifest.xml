@@ -12,12 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoMovil">
         <activity
-<<<<<<< HEAD
+
             android:name=".ListaProductosActivity"
-=======
-            android:name=".CategoryActivity"
->>>>>>> 37cc6cffd1823a4ca65da2e2f5f06ec63d7fda2a
             android:exported="false" />
+        <activity
+            android:name=".CategoryActivity"
+            android:exported="false" />
+
         <activity
             android:name=".RegistroActivity"
             android:exported="false" />
