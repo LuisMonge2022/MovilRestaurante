@@ -46,11 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:scaleType="fitXY"
-<<<<<<< HEAD
-                app:srcCompat="@drawable/c1" />
-=======
                 app:srcCompat="@drawable/img1" />
->>>>>>> cb4d0204ae8d942153b2aecae64931eb255bd8af
+
 
             <TextView
                 android:id="@+id/textView10"
