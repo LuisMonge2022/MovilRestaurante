@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/btnregrecat"
             android:layout_width="match_parent"
             android:layout_height="50dp"
             android:layout_marginRight="10dp"
@@ -49,13 +49,13 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="0dp"
-        android:layout_height="620dp"
+        android:layout_height="550dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/imageView7"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" >
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -63,11 +63,11 @@
             android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/imageView8"
+                android:id="@+id/imgdescrip"
                 android:layout_width="match_parent"
                 android:layout_height="350dp"
                 android:scaleType="fitXY"
-                app:srcCompat="@drawable/combo" />
+                app:srcCompat="@drawable/img1" />
 
             <TextView
                 android:id="@+id/textView13"
@@ -75,18 +75,18 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:text="POLLO A LA BRASA FAMILIAR"
-                android:textSize="20sp" />
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/textView14"
                 android:layout_width="match_parent"
-                android:layout_height="60dp"
+                android:layout_height="50dp"
                 android:layout_marginTop="10dp"
                 android:text="- 1 Pollo a la brasa + 1 porcion de papas, 1 ensalada familiar, cremas varias " />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
@@ -95,7 +95,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_marginLeft="20dp"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="140dp"
                     android:layout_weight="1" />
 
@@ -103,11 +103,11 @@
                     android:id="@+id/textView15"
                     android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="5dp"
                     android:layout_marginRight="30dp"
                     android:text="25.00"
                     android:textAlignment="textEnd"
-                    android:textSize="24sp" />
+                    android:textSize="20sp" />
 
             </LinearLayout>
 
@@ -116,7 +116,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginRight="20dp"
                 android:text="Agregar" />
 
