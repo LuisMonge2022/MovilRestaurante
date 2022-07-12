@@ -16,4 +16,5 @@
     <string name="etcontraseña">Ingresar Contraseña</string>
     <string name="btnregistado">REGISTRADO</string>
     <string name="btnregresar">Ir al Login</string>
+    <string name="etBuscarpor">Buscar comida</string>
 </resources>

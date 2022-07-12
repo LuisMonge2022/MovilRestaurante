@@ -97,7 +97,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:scaleType="fitXY"
+<<<<<<< HEAD
                     app:srcCompat="@drawable/c1"
+=======
+                    app:srcCompat="@drawable/img1"
+>>>>>>> cb4d0204ae8d942153b2aecae64931eb255bd8af
                     tools:ignore="SpeakableTextPresentCheck" />
 
                 <TextView
@@ -237,7 +241,11 @@
                     android:layout_height="200dp"
                     android:layout_weight="1"
                     android:scaleType="fitXY"
+<<<<<<< HEAD
                     app:srcCompat="@drawable/c1" />
+=======
+                    app:srcCompat="@drawable/img1" />
+>>>>>>> cb4d0204ae8d942153b2aecae64931eb255bd8af
 
                 <TextView
                     android:id="@+id/textView5"

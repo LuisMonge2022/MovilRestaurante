@@ -15,13 +15,14 @@
         android:orientation="horizontal">
 
         <ImageButton
-            android:id="@+id/imageButton3"
+            android:id="@+id/btnRegmenu"
             android:layout_width="10dp"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:layout_weight="1"
             android:background="?android:attr/colorMultiSelectHighlight"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView17"
@@ -30,9 +31,40 @@
             android:layout_marginTop="10dp"
             android:layout_marginRight="30dp"
             android:layout_weight="1"
-            android:text="Seleccione una categoria :"
+            android:text="Seleccione una comida :"
             android:textColor="@color/white"
             android:textSize="24sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="90dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:text="Buscar por:"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/etBuscarpor"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="@string/etBuscarpor"
+            android:inputType="textPersonName"
+            tools:ignore="TouchTargetSizeCheck" />
+
+        <Button
+            android:id="@+id/btnBuscarpor"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="10dp"
+            android:text="Buscar"
+            tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
     <LinearLayout
