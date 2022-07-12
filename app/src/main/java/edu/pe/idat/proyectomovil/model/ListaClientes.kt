@@ -12,6 +12,4 @@ data class Cliente(
     val xestado: String,
     var xnombre: String,
     val xtelefono: String
-
-
 )

@@ -55,7 +55,11 @@ class MenuActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     private fun irCarrito() {
-        Toast.makeText(applicationContext, "En desarrollo",Toast.LENGTH_LONG).show()
+
+        val intent = Intent(this,
+            CarritoActivity::class.java)
+        //Toast.makeText(applicationContext, "En desarrollo",Toast.LENGTH_LONG).show()
+        startActivity(intent)
     }
 
     private fun irLogin() {
