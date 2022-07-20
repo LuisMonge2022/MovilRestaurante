@@ -21,26 +21,27 @@
 
         <Button
             android:id="@+id/btnloguiarse"
-            android:layout_width="40dp"
+            android:layout_width="1dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="1dp"
             android:layout_weight="1"
             android:backgroundTint="?android:attr/colorMultiSelectHighlight"
             android:fontFamily="@font/archivo_black"
-            android:text="Cerrar Sesion"
-            android:textSize="12sp" />
+            app:icon="@drawable/ic_baseline_house_24"
+            app:iconSize="40dp" />
 
         <TextView
             android:id="@+id/textView8"
-            android:layout_width="wrap_content"
+            android:layout_width="100dp"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="1dp"
             android:layout_weight="1"
             android:fontFamily="@font/archivo_black"
-            android:text="BIENVENIDO(A)"
+            android:text="MENU PRINCIPAL"
             android:textAlignment="center"
             android:textColor="@color/white"
-            android:textSize="14sp" />
+            android:textSize="18sp" />
 
         <ImageButton
 
@@ -222,7 +223,7 @@
                     android:layout_width="410dp"
                     android:layout_height="200dp"
                     android:layout_weight="1"
-                    android:scaleType="fitXY"
+                    android:scaleType="centerCrop"
                     app:srcCompat="@drawable/fondo" />
             </androidx.cardview.widget.CardView>
 
