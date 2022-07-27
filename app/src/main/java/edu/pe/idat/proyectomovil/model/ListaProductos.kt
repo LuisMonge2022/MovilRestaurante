@@ -1,5 +1,7 @@
 package edu.pe.idat.proyectomovil.model
 
+import android.view.View
+
 class ListaProductos : ArrayList<Producto>()
 
 data class Producto(
@@ -8,4 +10,5 @@ data class Producto(
     val descripcion: String,
     val nombre: String,
     val precio: Double
+
 )

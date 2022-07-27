@@ -44,6 +44,8 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         val intent = Intent(this,
             RegistroActivity::class.java)
         startActivity(intent)
+
+        finish()
     }
 
     private fun irMenu(email:String, pasword: String) {

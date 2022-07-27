@@ -53,6 +53,7 @@
         app:srcCompat="@drawable/fondo" />
 
     <LinearLayout
+        android:id="@+id/linearLayout6"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_weight="1"
@@ -72,12 +73,27 @@
         android:id="@+id/txtsubtotal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
+        android:layout_marginBottom="8dp"
         android:background="@color/white"
         android:text="TextView"
+        android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/btnCarritoComprar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.671"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="@color/white"
+        android:text="@string/txtmonto1"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/txtsubtotal"
+        app:layout_constraintHorizontal_bias="0.703"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout6" />
 
     <Button
         android:id="@+id/btnCarritoComprar"

@@ -6,12 +6,16 @@
     android:orientation="vertical"
     android:layout_height="wrap_content"
     android:layout_marginStart="10dp"
-    android:layout_marginEnd="10dp">
+    android:layout_marginEnd="10dp"
+    >
 
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="100dp" >
+        android:layout_height="120dp"
+        android:layout_marginBottom="15dp"
+        android:background="@color/amarillo">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -21,7 +25,8 @@
                 android:id="@+id/txtnombrecarrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="COMBO 3" />
+                android:text="COMBO 3"
+                android:textSize="20sp" />
 
             <TextView
                 android:id="@+id/txtdescripcioncarrito"
@@ -34,24 +39,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textAlignment="textEnd" />
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="40dp"
                 android:orientation="horizontal">
 
                 <Spinner
                     android:id="@+id/spncantidadcarrito"
-                    android:layout_width="wrap_content"
-                    android:layout_height="30dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+
                     android:layout_weight="1" />
 
                 <ImageButton
                     android:id="@+id/btnEliminarcarrito"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
 
                     android:layout_weight="1"
                     app:srcCompat="@drawable/ic_baseline_delete_24" />

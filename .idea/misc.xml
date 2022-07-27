@@ -17,6 +17,7 @@
         <entry key="..\:/IDAT/6TO CICLO/5.DESARROLLO DE APLI. MOVILES 2/PROYECTO FINAL 6TO CICLO/ProyectoMovil/app/src/main/res/layout/activity_menu.xml" value="0.19852164730728616" />
         <entry key="..\:/IDAT/6TO CICLO/5.DESARROLLO DE APLI. MOVILES 2/PROYECTO FINAL 6TO CICLO/ProyectoMovil/app/src/main/res/layout/activity_registro.xml" value="0.19635416666666666" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.225" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/font/archivo_black.xml" value="0.4083333333333333" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_carrito.xml" value="0.378125" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_categoria.xml" value="0.23020833333333332" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_descripcion.xml" value="0.378125" />
@@ -27,6 +28,8 @@
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_registro.xml" value="0.22" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/auxiliar_carrito.xml" value="0.378125" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/auxiliar_producto.xml" value="0.25" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3785" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3785" />
       </map>
     </option>
   </component>

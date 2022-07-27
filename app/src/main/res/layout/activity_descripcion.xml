@@ -1,120 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".DescripcionActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout3"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="50dp"
         android:background="?android:attr/colorMultiSelectHighlight"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:orientation="horizontal">
+
 
         <ImageButton
             android:id="@+id/btnregrecat"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="?android:attr/colorMultiSelectHighlight"
             app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
         <TextView
             android:id="@+id/textView18"
-            android:layout_width="630dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
             android:layout_marginRight="60dp"
             android:layout_weight="1"
             android:text="Descripcion de la comida"
+            android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp" />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="350dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:srcCompat="@drawable/fondo" />
+    <LinearLayout
+        android:id="@+id/layoutdescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/marca_de_agua"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="185dp"
+        tools:layout_editor_absoluteY="101dp">
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
-        android:layout_height="550dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <ImageView
+            android:id="@+id/imgdescrip"
+            android:layout_width="330dp"
+            android:layout_height="320dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/img1" />
+
+
+        <TextView
+            android:id="@+id/txtNombreDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:text="POLLO A LA BRASA FAMILIAR"
+            android:textAlignment="gravity"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtDescripcionDescripcion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            android:text="* 1 Pollo a la brasa + 1 porcion de papas, 1 ensalada familiar, cremas varias " />
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginLeft="30dp"
+            android:background="@color/white"
+            android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/imgdescrip"
-                android:layout_width="match_parent"
-                android:layout_height="350dp"
-                android:scaleType="fitXY"
-                app:srcCompat="@drawable/img1" />
-
+            <Spinner
+                android:id="@+id/spncantidaddescripcion"
+                android:layout_width="100dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="5dp" />
 
             <TextView
-                android:id="@+id/textView13"
+                android:id="@+id/txtPrecioDescripcion"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="POLLO A LA BRASA FAMILIAR"
-                android:textSize="16sp" />
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="30dp"
+                android:text="25.00"
+                android:textAlignment="textEnd"
+                android:textSize="20sp" />
 
-            <TextView
-                android:id="@+id/textView14"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:layout_marginTop="10dp"
-                android:text="- 1 Pollo a la brasa + 1 porcion de papas, 1 ensalada familiar, cremas varias " />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="10dp"
-                android:orientation="horizontal">
-
-                <Spinner
-                    android:id="@+id/spinner"
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="140dp"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:id="@+id/textView15"
-                    android:layout_width="100dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginRight="30dp"
-                    android:text="25.00"
-                    android:textAlignment="textEnd"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
+        </LinearLayout>
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/btnAgregarCarrito"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
@@ -122,6 +116,8 @@
                 android:layout_marginRight="20dp"
                 android:text="Agregar" />
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </LinearLayout>
+</LinearLayout>

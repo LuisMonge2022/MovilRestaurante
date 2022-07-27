@@ -153,6 +153,8 @@ class RegistroActivity : AppCompatActivity(),View.OnClickListener {
         val intent = Intent(this,
             LoginActivity::class.java)
         startActivity(intent)
+
+        finish()
     }
 
     private fun limpiar(){

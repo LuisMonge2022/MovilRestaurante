@@ -1,26 +1,25 @@
 package edu.pe.idat.proyectomovil
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import android.widget.Toast
-import androidx.core.view.get
+
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.pe.idat.proyectomovil.databinding.ActivityCarritoBinding
-import edu.pe.idat.proyectomovil.databinding.ActivityMenuBinding
-import edu.pe.idat.proyectomovil.model.*
-import kotlinx.android.synthetic.main.activity_carrito.*
-import kotlinx.android.synthetic.main.activity_lista_productos.*
 
-class CarritoActivity : AppCompatActivity() , View.OnClickListener{
+import edu.pe.idat.proyectomovil.model.*
+import edu.pe.idat.proyectomovil.repository.Conexion
+import kotlinx.android.synthetic.main.activity_carrito.*
+import kotlinx.android.synthetic.main.auxiliar_producto.*
+
+
+class CarritoActivity : AppCompatActivity() , View.OnClickListener {
 
     private lateinit var binding: ActivityCarritoBinding
 
+    val lista = ListaCarrito()
 
-    val listaCarrito = listOf<Carrito>(Carrito(1,"Pollo","Rico y sabroso", 2,50.0, 15.0),
-        Carrito(2,"Pollo","Rico y sabroso", 2,50.0, 15.0),
-        Carrito(3,"Arroz","Rico ", 2,50.0, 15.0),
-        Carrito(4,"AZUCAR","Rico Y DULCE", 2,50.0, 15.0),)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,30 +27,70 @@ class CarritoActivity : AppCompatActivity() , View.OnClickListener{
 
         setContentView(binding.root)
         binding.btnCarritoComprar.setOnClickListener(this)
-        //val subtotal = rvCarrito.findViewHolderForItemId(R.id.txtpreciocarrito)
+        binding.btnRegresarCategoria.setOnClickListener(this)
 
-       // traerRecycler(listaCarrito)
+        var conexion = Conexion(this)
+        var db = conexion.writableDatabase
+        var sql= "Select * from carrito"
+        var respuesta = db.rawQuery(sql,null)
+        if (respuesta.moveToFirst()){
+            do {
+
+                var cod= respuesta.getInt(1)
+                var nombre= respuesta.getString(2)
+                var descr=   respuesta.getString(3)
+                var precio= respuesta.getDouble(4)
+                if (nombre == null){
+                    nombre = "vacio"
+                    descr = "vacio"
+                    precio= 0.00
+                }
+                var canti =respuesta.getInt(5)
+                var sub = 0.0
+                lista.add(Carrito(cod,nombre,descr,canti,precio,sub))
+
+
+            }while (respuesta.moveToNext())
+        }
 
         rvCarrito.layoutManager = LinearLayoutManager(this)
-        val adapter = CarritoAdapter(listaCarrito)
+
+
+        val adapter = CarritoAdapter(lista)
         rvCarrito.adapter = adapter
         binding.txtsubtotal.setText(obtenersubtotal().toString())
-        //val un = rvCarrito.get(4)
-        //Toast.makeText(applicationContext, "En desarrollo ",Toast.LENGTH_LONG).show()
     }
 
     private fun  obtenersubtotal(): Double{
         var suma:Double=0.0
-        for (car : Carrito in listaCarrito){
+        if (lista != null) {
+            for (car : Carrito in lista){
+
+
             suma= suma + car.subtotal
+            }
         }
         return suma
     }
 
-    override fun onClick(v: View?) {
-        TODO("Not yet implemented")
+    override fun onClick(v: View) {
+        when(v.id){
+            binding.btnCarritoComprar.id-> IrMenu()
+            binding.btnCarritoComprar.id-> continuarCompra()
+        }
     }
 
+    private fun continuarCompra() {
+        val intent = Intent(this,
+            DireccionActivity::class.java)
+        startActivity(intent)
+    }
+
+    private fun IrMenu() {
+        val intent = Intent(this,
+            MenuActivity::class.java)
+        startActivity(intent)
+    }
 
     /*fun traerRecycler(listaCarrito: List<Carrito>){
         rvCarrito.layoutManager = LinearLayoutManager(this)

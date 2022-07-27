@@ -17,4 +17,5 @@
     <string name="btnregistado">REGISTRADO</string>
     <string name="btnregresar">Ir al Login</string>
     <string name="etBuscarpor">Buscar comida</string>
+    <string name="txtmonto1">Monto a Pagar</string>
 </resources>

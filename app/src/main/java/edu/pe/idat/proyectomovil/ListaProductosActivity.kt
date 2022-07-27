@@ -1,12 +1,15 @@
 package edu.pe.idat.proyectomovil
 
+
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
+import androidx.core.text.isDigitsOnly
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.pe.idat.proyectomovil.Service.ProductoService
 import edu.pe.idat.proyectomovil.databinding.ActivityListaProductosBinding
-import edu.pe.idat.proyectomovil.databinding.ActivityMainBinding
 import edu.pe.idat.proyectomovil.model.ListaProductos
 import edu.pe.idat.proyectomovil.model.Producto
 import edu.pe.idat.proyectomovil.model.ProductosAdapter
@@ -16,20 +19,23 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class ListaProductosActivity : AppCompatActivity() {
+class ListaProductosActivity : AppCompatActivity() , View.OnClickListener {
 
+
+    private lateinit var binding:ActivityListaProductosBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // JALA EL PUTEXTRA DE MENUACTIVITY
         val codigocategoria = intent.getSerializableExtra("codigocategoria")
-        setContentView(R.layout.activity_lista_productos)
+        binding= ActivityListaProductosBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         traerListaProductos(codigocategoria as Int)
+        binding.btnRegmenu.setOnClickListener(this)
+        binding.btnBuscarpor.setOnClickListener(this)
 
-        //traerRecycler()
-        //binding.btningresar.setOnClickListener(this)
-        //binding.btnregistrarse.setOnClickListener(this)
+
     }
 
     //LLAMARA AL SERVICE DE ACUERDO AL CODIGO INGRESADO
@@ -43,10 +49,10 @@ class ListaProductosActivity : AppCompatActivity() {
                     val listaProductos= response.body()
                     if (listaProductos != null) {
                         traerRecycler(listaProductos)
+                    }else{
+                        recyclerVacío()
                     }
-
                 }
-
                 override fun onFailure(call: Call<ListaProductos>, t: Throwable) {
                     Toast.makeText(this@ListaProductosActivity,"SUCEDIÓ UN ERROR",Toast.LENGTH_SHORT).show()
                 }
@@ -58,6 +64,8 @@ class ListaProductosActivity : AppCompatActivity() {
                     val listaProductos= response.body()
                     if (listaProductos != null) {
                         traerRecycler(listaProductos)
+                    }else{
+                        recyclerVacío()
                     }
                 }
                 override fun onFailure(call: Call<ListaProductos>, t: Throwable) {
@@ -71,7 +79,75 @@ class ListaProductosActivity : AppCompatActivity() {
         rvProductos.layoutManager = LinearLayoutManager(this)
         val adapter = ProductosAdapter(listaprod)
         rvProductos.adapter = adapter
+
     }
 
+    override fun onClick(v: View) {
+        when (v.id) {
+            R.id.btnRegmenu->  irMenu()
+            R.id.btnBuscarpor-> Buscador()
+        }
+    }
+
+    private fun irMenu() {
+        val intent = Intent(this,
+            MenuActivity::class.java)
+
+        startActivity(intent)
+    }
+
+    private fun Buscador() {
+        val buscar =binding.etBuscarpor.text.toString()
+        if (buscar.trim()== "" || buscar.trim()== null){
+            recyclerVacío()
+        }else{
+            val productoService : ProductoService = RestEngine.getRestEngine().create(ProductoService::class.java)
+            if (buscar.isDigitsOnly()){
+                val codigo:Int = buscar.toInt()
+                val result: Call<Producto> = productoService.listarProductosxCodigo(codigo)
+                result.enqueue(object : Callback <Producto> {
+                    override fun onResponse(call: Call<Producto>, response: Response<Producto>) {
+                        val producto= response.body()
+                        if (producto!= null){
+                            var listavacia = ListaProductos()
+                            listavacia.add(producto)
+                            traerRecycler(listavacia)
+                        }else{
+                            recyclerVacío()
+                        }
+                    }
+                    override fun onFailure(call: Call<Producto>, t: Throwable) {
+                        Toast.makeText(this@ListaProductosActivity,"FATAL",Toast.LENGTH_SHORT).show()
+                    }
+                })
+            }else{
+                val result: Call<ListaProductos> = productoService.listarProductosxPalabra(buscar)
+                result.enqueue(object : Callback<ListaProductos>{
+                    override fun onResponse(
+                        call: Call<ListaProductos>,
+                        response: Response<ListaProductos>
+                    ) {
+                        val listaProductos= response.body()
+                        if (listaProductos != null) {
+                            traerRecycler(listaProductos)
+                        }else{
+                            recyclerVacío()
+                        }
+                    }
+                    override fun onFailure(call: Call<ListaProductos>, t: Throwable) {
+                        Toast.makeText(this@ListaProductosActivity,"FATAL",Toast.LENGTH_SHORT).show()
+                    }
+
+                })
+            }
+        }
+    }
+
+    fun recyclerVacío(){
+        var listavacia = ListaProductos()
+        listavacia.add(Producto(0,0,
+            "No hay nada para mostrar","Producto no encontrado",0.00))
+        traerRecycler(listavacia )
+    }
 
 }

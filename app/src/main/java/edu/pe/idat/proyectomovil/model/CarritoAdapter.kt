@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import edu.pe.idat.proyectomovil.R
 import kotlinx.android.synthetic.main.auxiliar_carrito.view.*
 
-class CarritoAdapter (val listaCarrito: List<Carrito>): RecyclerView.Adapter<CarritoAdapter.CarritoHolder>(){
+class CarritoAdapter (val listaCarrito: ListaCarrito): RecyclerView.Adapter<CarritoAdapter.CarritoHolder>(){
 
     class CarritoHolder(val view:View) :RecyclerView.ViewHolder(view){
 
@@ -27,25 +27,24 @@ class CarritoAdapter (val listaCarrito: List<Carrito>): RecyclerView.Adapter<Car
             sp.adapter=adap
             sp.setSelection(cantidad-1)
             view.txtpreciocarrito.text = subtotal.toString()
-
             sp.onItemSelectedListener = object : AdapterView.OnItemSelectedListener{
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view2: View?,
-                    position: Int,
-                    id: Long
-                ) {
+                override fun onItemSelected(parent: AdapterView<*>?, view2: View?, position: Int, id: Long) {
                     sp.setSelection(position)
                     cantidad = position+1
                     subtotal = carrito.precio*cantidad
                     view.txtpreciocarrito.text = subtotal.toString()
                 }
-
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                     TODO("Not yet implemented")
                 }
 
             }
+        }
+
+        fun obtenerMonto():Double{
+            var monto :Double=0.0
+
+            return monto
         }
     }
 
