@@ -1,9 +1,6 @@
 package edu.pe.idat.proyectomovil
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 3b22fba8df6d804e00cdb792b0d05cd0c5957f3a
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,13 +9,10 @@ import android.widget.Toast
 import androidx.core.text.isDigitsOnly
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.pe.idat.proyectomovil.Service.ProductoService
-import edu.pe.idat.proyectomovil.databinding.ActivityCategoriaBinding
+
 import edu.pe.idat.proyectomovil.databinding.ActivityListaProductosBinding
-<<<<<<< HEAD
-=======
-import edu.pe.idat.proyectomovil.databinding.ActivityMainBinding
-import edu.pe.idat.proyectomovil.databinding.ActivityMenuBinding
->>>>>>> 3b22fba8df6d804e00cdb792b0d05cd0c5957f3a
+
+
 import edu.pe.idat.proyectomovil.model.ListaProductos
 import edu.pe.idat.proyectomovil.model.Producto
 import edu.pe.idat.proyectomovil.model.ProductosAdapter
@@ -28,15 +22,10 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-<<<<<<< HEAD
-class ListaProductosActivity : AppCompatActivity() , View.OnClickListener {
 
-
-    private lateinit var binding:ActivityListaProductosBinding
-=======
 class ListaProductosActivity : AppCompatActivity(), View.OnClickListener {
     private lateinit var binding: ActivityListaProductosBinding
->>>>>>> 3b22fba8df6d804e00cdb792b0d05cd0c5957f3a
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -116,7 +105,7 @@ class ListaProductosActivity : AppCompatActivity(), View.OnClickListener {
         startActivity(intent)
     }
 
-<<<<<<< HEAD
+
     private fun Buscador() {
         val buscar =binding.etBuscarpor.text.toString()
         if (buscar.trim()== "" || buscar.trim()== null){
@@ -170,17 +159,7 @@ class ListaProductosActivity : AppCompatActivity(), View.OnClickListener {
             "No hay nada para mostrar","Producto no encontrado",0.00))
         traerRecycler(listavacia )
     }
-=======
-    override fun onClick(v: View) {
-        when(v.id) {
-            R.id.btnRegmenu -> irMenu()
-        }
-    }
->>>>>>> 3b22fba8df6d804e00cdb792b0d05cd0c5957f3a
 
-    private fun irMenu() {
-        val intent = Intent(this,
-            MenuActivity::class.java)
-        startActivity(intent)
-    }
+
+
 }
