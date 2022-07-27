@@ -49,38 +49,47 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
-            android:background="?android:attr/colorMultiSelectHighlight"
-            android:backgroundTint="?android:attr/colorMultiSelectHighlight"
+            android:background="?android:attr/colorPressedHighlight"
+            android:backgroundTint="?android:attr/colorPressedHighlight"
             android:fontFamily="@font/archivo_black"
             android:text="@string/tvtitulologin"
             android:textAlignment="center"
             android:textSize="24sp" />
 
-        <EditText
-            android:id="@+id/etemail"
-            android:layout_width="280dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:ems="10"
-            android:fontFamily="@font/archivo_black"
-            android:hint="@string/etemail"
-            android:inputType="textEmailAddress"
-            android:textSize="20sp"
-            tools:ignore="TouchTargetSizeCheck" />
-
-        <EditText
-            android:id="@+id/etpassword"
-            android:layout_width="280dp"
+        <com.google.android.material.textfield.TextInputLayout
+            style="   "
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="30dp"
-            android:ems="10"
-            android:fontFamily="@font/archivo_black"
-            android:hint="@string/etpassword"
-            android:inputType="textPassword"
-            android:textSize="20sp"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_marginRight="10dp"
+            app:startIconDrawable="@drawable/ic_baseline_account_box_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/etemail"
+                android:inputType="textEmailAddress"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            app:passwordToggleEnabled="true"
+            app:startIconDrawable="@drawable/ic_baseline_key_24">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/etpassword"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
 
         <Button
             android:id="@+id/btningresar"
@@ -88,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="40dp"
-            android:backgroundTint="@color/teal_700"
+            android:backgroundTint="@color/design_default_color_secondary"
             android:fontFamily="@font/archivo_black"
             android:text="@string/btningresar"
             android:textColor="@color/black"

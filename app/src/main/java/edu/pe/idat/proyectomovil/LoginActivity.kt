@@ -89,6 +89,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             startActivity(intent)
             Toast.makeText(this@LoginActivity, "Bienvenido $mensaje", Toast.LENGTH_LONG)
                 .show()
+            limpiarCampos()
         }
 
     }
