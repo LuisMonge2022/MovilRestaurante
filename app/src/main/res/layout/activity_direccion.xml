@@ -17,11 +17,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/imageButton5"
+            android:id="@+id/ibregresarCarrito"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:background="?android:attr/colorMultiSelectHighlight"
-            app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+            app:srcCompat="@drawable/ic_baseline_arrow_back_24"
+            tools:ignore="SpeakableTextPresentCheck" />
 
         <TextView
             android:id="@+id/textView20"
@@ -31,7 +32,7 @@
             android:layout_marginTop="10dp"
             android:text="DIRECCION DE ENVIO"
             android:textColor="@color/white"
-            android:textSize="24sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 
@@ -44,5 +45,97 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout5"
-        app:srcCompat="@drawable/fondo" />
+        app:srcCompat="@drawable/marca_de_agua" />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="270dp"
+        android:layout_height="390dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView14"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout5">
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="Nombre usuario:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvnombre"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginRight="10dp"
+            android:background="?attr/colorButtonNormal" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="100dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="Direccion actual:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvdireccionA"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="120dp"
+            android:layout_marginRight="10dp"
+            android:background="?attr/colorButtonNormal" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="190dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="Direccion entrega:"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvdireccion"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="210dp"
+            android:layout_marginRight="10dp"
+            android:background="?attr/colorButtonNormal" />
+
+        <Button
+            android:id="@+id/btndireccion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="280dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="?android:attr/colorPressedHighlight"
+            android:fontFamily="sans-serif"
+            android:text="Nueva direccion"
+            android:textColor="@color/black" />
+
+        <Button
+            android:id="@+id/btnpagar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="330dp"
+            android:layout_marginRight="10dp"
+            android:backgroundTint="@android:color/holo_red_light"
+            android:fontFamily="sans-serif"
+            android:text="Realizar pago"
+            android:textColor="@color/black" />
+
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

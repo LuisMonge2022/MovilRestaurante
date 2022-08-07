@@ -18,4 +18,5 @@
     <string name="btnregresar">Ir al Login</string>
     <string name="etBuscarpor">Buscar comida</string>
     <string name="txtmonto1">Monto a Pagar</string>
+    <string name="title_activity_maps">MapsActivity</string>
 </resources>

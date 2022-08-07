@@ -27,7 +27,7 @@ class CarritoActivity : AppCompatActivity() , View.OnClickListener {
 
         setContentView(binding.root)
         binding.btnCarritoComprar.setOnClickListener(this)
-        binding.btnRegresarCategoria.setOnClickListener(this)
+        binding.ibregresarMenu.setOnClickListener(this)
 
         var conexion = Conexion(this)
         var db = conexion.writableDatabase
@@ -77,7 +77,14 @@ class CarritoActivity : AppCompatActivity() , View.OnClickListener {
         when(v.id){
             binding.btnCarritoComprar.id-> IrMenu()
             binding.btnCarritoComprar.id-> continuarCompra()
+            binding.ibregresarMenu.id -> regresarMenu()
         }
+    }
+
+    private fun regresarMenu() {
+        val intent = Intent(this,
+            MenuActivity::class.java)
+        startActivity(intent)
     }
 
     private fun continuarCompra() {
