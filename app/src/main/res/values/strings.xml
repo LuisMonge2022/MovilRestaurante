@@ -18,7 +18,11 @@
     <string name="btnregresar">Ir al Login</string>
     <string name="etBuscarpor">Buscar comida</string>
     <string name="txtmonto1">Monto a Pagar</string>
+
     <string name="valcarritosplashtxt">Actualizando...</string>
     <string name="valpasarelatitulo">Ingrese los datos de su tarjeta</string>
     <string name="valpasarelatextomonto">Monto a cargar:</string>
+
+    <string name="title_activity_maps">MapsActivity</string>
+
 </resources>

@@ -17,8 +17,10 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageButton
-            android:id="@+id/btnRegresarCategoria"
+
+            android:id="@+id/ibregresarMenu"
             android:layout_width="2dp"
+
             android:layout_height="match_parent"
             android:layout_marginRight="70dp"
             android:layout_weight="1"
@@ -37,14 +39,6 @@
             android:textColor="@color/white"
             android:textSize="24sp" />
 
-        <ImageButton
-            android:id="@+id/btnActualizarCarrito"
-            android:layout_width="2dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="?android:attr/colorMultiSelectHighlight"
-            app:srcCompat="@drawable/ic_baseline_update_24" />
-
     </LinearLayout>
 
     <ImageView
@@ -58,7 +52,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
         app:layout_constraintVertical_bias="1.0"
-        app:srcCompat="@drawable/fondo" />
+        app:srcCompat="@drawable/marca_de_agua" />
 
     <LinearLayout
         android:id="@+id/linearLayout6"
