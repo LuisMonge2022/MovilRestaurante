@@ -11,6 +11,7 @@ import android.widget.Toast
 import androidx.appcompat.R
 import edu.pe.idat.proyectomovil.Service.ProductoService
 import edu.pe.idat.proyectomovil.databinding.ActivityDescripcionBinding
+import edu.pe.idat.proyectomovil.model.Carrito
 import edu.pe.idat.proyectomovil.model.Producto
 import edu.pe.idat.proyectomovil.repository.Conexion
 import edu.pe.idat.proyectomovil.utilitarios.RestEngine
@@ -69,33 +70,39 @@ class DescripcionActivity : AppCompatActivity() , View.OnClickListener{
         }
     }
 
-
-
     override fun onClick(v: View) {
         when(v.id){
             binding.btnregrecat.id -> regresarMenu()
-            binding.btnAgregarCarrito.id -> guardarCarrito(producto)
+            binding.btnAgregarCarrito.id -> agregarCarrito(producto)
         }
-
     }
 
-    private fun guardarCarrito(producto: Producto) {
-
-        var cantidad = binding.spncantidaddescripcion.selectedItem.toString()
+    private fun agregarCarrito(producto: Producto) {
+        var cantidad = binding.spncantidaddescripcion.selectedItem.toString().toInt()
+        val carrito=Carrito(producto.codproducto,producto.nombre,producto.descripcion,cantidad,producto.precio, cantidad * producto.precio)
         var conexion = Conexion(this)
-        var db = conexion.writableDatabase
+        var verificar= conexion.buscarCarrito(producto.codproducto)
+        if (verificar.cantidad>0) {
+            carrito.cantidad=carrito.cantidad+verificar.cantidad
+            var resultado1= conexion.actualizarCarrito(carrito)
+            if (resultado1 >0) {
+                Toast.makeText(this@DescripcionActivity, "Producto ingresado $resultado1", Toast.LENGTH_SHORT)
+                    .show()
+            }else{
+                Toast.makeText(this@DescripcionActivity, "No se pudo agregar al carrito", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }else{
+            var resultado=conexion.guardarCarrito(carrito)
+            if (resultado >0) {
+                Toast.makeText(this@DescripcionActivity, "Producto ingresado $resultado", Toast.LENGTH_SHORT)
+                    .show()
+            }else{
+                Toast.makeText(this@DescripcionActivity, "No se pudo agregar al carrito", Toast.LENGTH_SHORT)
+                    .show()
+            }
+        }
 
-       // var registro : ContentValues? = null
-
-        val registro= ContentValues()
-        registro.put("idproducto",producto.codproducto)
-        registro.put("nombreproducto",producto.nombre)
-        registro.put("descripcion",producto.descripcion)
-        registro.put("cantidad",cantidad)
-        registro.put("precio",producto.precio)
-        //registro.put("sub",producto.precio)
-        db.insert("carrito",null,registro)
-        db.close()
 
     }
 

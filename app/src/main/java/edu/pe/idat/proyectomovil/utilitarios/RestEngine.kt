@@ -11,13 +11,6 @@ class RestEngine {
         fun getRestEngine(): Retrofit{
             val interceptor = HttpLoggingInterceptor()
             interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-            /*val client= OkHttpClient.Builder().addInterceptor(interceptor).build()
-            val retrofit = Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:8087/proyrestaurante/")
-                .addConverterFactory(GsonConverterFactory.create())
-                .client(client)
-                .build()
-            return retrofit*/
 
             val retrofit = Retrofit.Builder()
                 .baseUrl("http://10.0.2.2:8087/proyrestaurante/")

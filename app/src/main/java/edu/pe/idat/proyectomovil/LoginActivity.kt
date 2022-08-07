@@ -8,6 +8,8 @@ import android.widget.Toast
 import edu.pe.idat.proyectomovil.databinding.ActivityMainBinding
 import edu.pe.idat.proyectomovil.model.Cliente
 import edu.pe.idat.proyectomovil.Service.ClienteService
+import edu.pe.idat.proyectomovil.model.ClienteDB
+import edu.pe.idat.proyectomovil.repository.Conexion
 import edu.pe.idat.proyectomovil.utilitarios.RestEngine
 import retrofit2.Call
 import retrofit2.Callback
@@ -65,6 +67,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
                     }else{
                         Toast.makeText(this@LoginActivity, "Usuario no existe", Toast.LENGTH_LONG).show()
                         limpiarCampos()
+                        finish()
                     }
                 }
 
@@ -83,16 +86,29 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         if (clienteItem.xcontrasenia!=binding.etpassword.text.toString()){
             Toast.makeText(this@LoginActivity, "Contraseña incorrecta", Toast.LENGTH_LONG).show()
         }else{
-            var mensaje = clienteItem?.xnombre
-            val intent = Intent(this,
-                MenuActivity::class.java)
-            startActivity(intent)
-            Toast.makeText(this@LoginActivity, "Bienvenido $mensaje", Toast.LENGTH_LONG)
-                .show()
-            limpiarCampos()
+            var conexion =Conexion(this)
+            var resultado =conexion.guardarClienteDB(Cliente(clienteItem.codcliente,clienteItem.xapellido,
+                                                            clienteItem.xcontrasenia,clienteItem.xdireccion,
+                                                            clienteItem.xdni,clienteItem.xemail,"",
+                                                            clienteItem.xnombre,clienteItem.xtelefono))
+            if (resultado>0){
+
+                var mensaje = clienteItem?.codcliente
+
+                val intent = Intent(this,
+                    MenuActivity::class.java).apply { putExtra("codigo",mensaje
+                ) }
+                startActivity(intent)
+                Toast.makeText(this@LoginActivity, "Bienvenido $mensaje", Toast.LENGTH_LONG).show()
+                limpiarCampos()
+            }else{
+                Toast.makeText(this@LoginActivity, "Ocurrió un error", Toast.LENGTH_LONG).show()
+            }
         }
 
     }
+
+
 
     private fun limpiarCampos(){
         binding.etemail.setText("")

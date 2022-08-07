@@ -11,6 +11,7 @@ import edu.pe.idat.proyectomovil.databinding.ActivityMainBinding
 import edu.pe.idat.proyectomovil.databinding.ActivityMenuBinding
 import edu.pe.idat.proyectomovil.model.Cliente
 import edu.pe.idat.proyectomovil.model.ListaProductos
+import edu.pe.idat.proyectomovil.repository.Conexion
 import edu.pe.idat.proyectomovil.utilitarios.RestEngine
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,7 +19,7 @@ import retrofit2.Response
 
 class MenuActivity : AppCompatActivity(),View.OnClickListener {
     private lateinit var binding: ActivityMenuBinding
-
+    private lateinit var cliente:Cliente
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -26,6 +27,11 @@ class MenuActivity : AppCompatActivity(),View.OnClickListener {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val codigo = intent.getIntExtra("codigo",0)
+
+        cliente = Conexion(this).buscarCliente(codigo)
+
+        binding.txtusuario.text= cliente.xnombre +" " +cliente.xapellido
         binding.btnloguiarse.setOnClickListener(this)
         binding.btnCarrito.setOnClickListener(this)
         binding.btnCombos.setOnClickListener(this)
@@ -58,15 +64,22 @@ class MenuActivity : AppCompatActivity(),View.OnClickListener {
 
         val intent = Intent(this,
             CarritoActivity::class.java)
-        //Toast.makeText(applicationContext, "En desarrollo",Toast.LENGTH_LONG).show()
         startActivity(intent)
     }
 
     private fun irLogin() {
 
-        val intent = Intent(this,
-            LoginActivity::class.java)
-        startActivity(intent)
+        var resul = Conexion(this).eliminarClienteDB(cliente.codcliente)
+
+        if (resul>0){
+            val intent = Intent(this,
+                LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+        }else{
+            Toast.makeText(this@MenuActivity,"La cag",Toast.LENGTH_SHORT).show()
+        }
+
     }
 
 }

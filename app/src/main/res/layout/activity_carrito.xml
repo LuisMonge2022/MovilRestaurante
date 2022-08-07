@@ -18,7 +18,7 @@
 
         <ImageButton
             android:id="@+id/btnRegresarCategoria"
-            android:layout_width="1dp"
+            android:layout_width="2dp"
             android:layout_height="match_parent"
             android:layout_marginRight="70dp"
             android:layout_weight="1"
@@ -36,6 +36,14 @@
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="24sp" />
+
+        <ImageButton
+            android:id="@+id/btnActualizarCarrito"
+            android:layout_width="2dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="?android:attr/colorMultiSelectHighlight"
+            app:srcCompat="@drawable/ic_baseline_update_24" />
 
     </LinearLayout>
 

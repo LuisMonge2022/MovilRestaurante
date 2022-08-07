@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".PasarellaActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <TextView
+        android:id="@+id/txtpasarellatitulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:padding="20dp"
+        android:text="@string/valpasarelatitulo"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        tools:ignore="TextContrastCheck" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/valpasarelatextomonto"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtpasarellamonto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textAlignment="center"
+            android:text="s/.  0.00"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lintarjeta"
+        android:layout_width="380dp"
+        android:layout_margin="10dp"
+        android:layout_height="240dp"
+
+        android:layout_marginStart="20dp"
+        android:background="@drawable/tarjetav2"
+        android:orientation="vertical">
+
+
+        <EditText
+            android:id="@+id/txt_cardnumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:background="@drawable/border"
+            android:ems="10"
+            android:hint="Card Number"
+            android:inputType="number"
+            android:maxLength="16"
+            android:selectAllOnFocus="false"
+            android:shadowColor="@color/white" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/txt_month"
+                android:maxLength="2"
+                android:hint="Mes"
+                android:background="@drawable/border"
+                />
+
+            <EditText
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/txt_year"
+                android:maxLength="2"
+                android:hint="Año"
+                android:background="@drawable/border"
+
+                android:layout_marginLeft="14dp"
+                android:layout_marginStart="14dp" />
+
+            <EditText
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/txt_cvv"
+                android:background="@drawable/border"
+
+
+                android:layout_marginStart="10dp"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:hint="CVV" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_margin="20dp"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:background="@drawable/border"
+            android:id="@+id/txt_email"
+            android:hint="Correo electronico"
+            android:layout_marginTop="27dp"
+             />
+
+        <Button
+        android:id="@+id/btn_pay"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Pagar"
+        android:textAllCaps="false"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/kind_card"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/token_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_margin="10dp"
+            android:textSize="18sp" />
+
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

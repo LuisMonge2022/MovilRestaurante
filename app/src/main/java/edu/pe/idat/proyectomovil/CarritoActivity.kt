@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
 
 import androidx.recyclerview.widget.LinearLayoutManager
 import edu.pe.idat.proyectomovil.databinding.ActivityCarritoBinding
@@ -11,78 +12,63 @@ import edu.pe.idat.proyectomovil.databinding.ActivityCarritoBinding
 import edu.pe.idat.proyectomovil.model.*
 import edu.pe.idat.proyectomovil.repository.Conexion
 import kotlinx.android.synthetic.main.activity_carrito.*
-import kotlinx.android.synthetic.main.auxiliar_producto.*
 
 
-class CarritoActivity : AppCompatActivity() , View.OnClickListener {
+class CarritoActivity : AppCompatActivity() , View.OnClickListener{
 
     private lateinit var binding: ActivityCarritoBinding
 
     val lista = ListaCarrito()
+    var conexion = Conexion(this)
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityCarritoBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
         binding.btnCarritoComprar.setOnClickListener(this)
         binding.btnRegresarCategoria.setOnClickListener(this)
-
-        var conexion = Conexion(this)
-        var db = conexion.writableDatabase
-        var sql= "Select * from carrito"
-        var respuesta = db.rawQuery(sql,null)
-        if (respuesta.moveToFirst()){
-            do {
-
-                var cod= respuesta.getInt(1)
-                var nombre= respuesta.getString(2)
-                var descr=   respuesta.getString(3)
-                var precio= respuesta.getDouble(4)
-                if (nombre == null){
-                    nombre = "vacio"
-                    descr = "vacio"
-                    precio= 0.00
-                }
-                var canti =respuesta.getInt(5)
-                var sub = 0.0
-                lista.add(Carrito(cod,nombre,descr,canti,precio,sub))
-
-
-            }while (respuesta.moveToNext())
+        binding.btnActualizarCarrito.setOnClickListener(this)
+        for (item in  conexion.listarCarrito()){
+            lista.add(item)
+        }
+        if (lista.isEmpty()){
+            recyclerVacío()
+        }else{
+            traerRecycler(lista)
         }
 
-        rvCarrito.layoutManager = LinearLayoutManager(this)
-
-
-        val adapter = CarritoAdapter(lista)
-        rvCarrito.adapter = adapter
-        binding.txtsubtotal.setText(obtenersubtotal().toString())
     }
 
-    private fun  obtenersubtotal(): Double{
-        var suma:Double=0.0
-        if (lista != null) {
-            for (car : Carrito in lista){
-
-
-            suma= suma + car.subtotal
-            }
-        }
-        return suma
-    }
 
     override fun onClick(v: View) {
         when(v.id){
-            binding.btnCarritoComprar.id-> IrMenu()
+
+            binding.btnRegresarCategoria.id-> IrMenu()
             binding.btnCarritoComprar.id-> continuarCompra()
+            binding.btnActualizarCarrito.id -> actualizarRecycler()
         }
     }
 
+    private fun actualizarRecycler() {
+        if (lista.isNotEmpty()){
+            lista.clear()
+        }else{
+            for (item in  conexion.listarCarrito()){
+                lista.add(item)
+            }
+            if (lista.isEmpty()){
+                recyclerVacío()
+            }else{
+                traerRecycler(lista)
+            }
+        }
+    }
+
+
     private fun continuarCompra() {
         val intent = Intent(this,
-            DireccionActivity::class.java)
+            PasarellaActivity::class.java)
         startActivity(intent)
     }
 
@@ -92,9 +78,24 @@ class CarritoActivity : AppCompatActivity() , View.OnClickListener {
         startActivity(intent)
     }
 
-    /*fun traerRecycler(listaCarrito: List<Carrito>){
+    fun traerRecycler(listaCarrito: ListaCarrito){
         rvCarrito.layoutManager = LinearLayoutManager(this)
-        val adapter = CarritoAdapter(listaCarrito)
+        val adapter = CarritoAdapter()
         rvCarrito.adapter = adapter
-    }*/
+        adapter.getList(listaCarrito)
+        var suma=0.0
+        for(irem in listaCarrito){
+            suma= suma +irem.subtotal
+        }
+        binding.txtsubtotal.text=suma.toString()
+    }
+
+    fun recyclerVacío(){
+        var listavacia = ListaCarrito()
+        listavacia.add(Carrito(0,"Aún no agregas nada",
+            "No hay nada para mostrar",0,0.0,0.0))
+        traerRecycler(listavacia )
+    }
+
+
 }
