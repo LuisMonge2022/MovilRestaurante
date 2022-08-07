@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/navlistapedidofrag">
+    <fragment
+        android:id="@+id/navlistapedidofrag"
+        android:name="edu.pe.idat.proyectomovil.view.fragments.ListaPedidoFragment"
+        android:label="fragment_lista_pedido"
+        tools:layout="@layout/fragment_lista_pedido" />
+    <fragment
+        android:id="@+id/navvoluntariofrag"
+        android:name="edu.pe.idat.proyectomovil.view.fragments.VoluntarioFragment"
+        android:label="fragment_voluntario"
+        tools:layout="@layout/fragment_pedidos_gestionados" />
+</navigation>

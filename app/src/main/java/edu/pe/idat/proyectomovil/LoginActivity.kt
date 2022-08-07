@@ -11,6 +11,8 @@ import edu.pe.idat.proyectomovil.Service.ClienteService
 import edu.pe.idat.proyectomovil.model.ClienteDB
 import edu.pe.idat.proyectomovil.repository.Conexion
 import edu.pe.idat.proyectomovil.utilitarios.RestEngine
+import edu.pe.idat.proyectomovil.view.LoginMotorizadoActivity
+import edu.pe.idat.proyectomovil.view.SplashActivity
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -26,6 +28,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(binding.root)
         binding.btningresar.setOnClickListener(this)
         binding.btnregistrarse.setOnClickListener(this)
+        binding.btnloginmotorizado.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -36,9 +39,18 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         when (v.id) {
             R.id.btningresar ->  irMenu(email, pasword )
             R.id.btnregistrarse -> irRegistrarse()
+            R.id.btnloginmotorizado -> irLoginMotorizado()
 
         }
 
+    }
+
+    private fun irLoginMotorizado() {
+        val intent = Intent(this,
+            SplashActivity::class.java)
+        startActivity(intent)
+
+        finish()
     }
 
     private fun irRegistrarse() {

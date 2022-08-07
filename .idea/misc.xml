@@ -47,6 +47,19 @@
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/auxiliar_producto.xml" value="0.25" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3785" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3785" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/drawable-v24/ic_baseline_account_circle_24.xml" value="0.1" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/drawable-v24/ic_baseline_person_24.xml" value="0.1" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/drawable-v24/ic_baseline_vpn_key_24.xml" value="0.1" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/activity_login_motorizado.xml" value="0.1358695652173913" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/activity_motorizado.xml" value="0.17806484295845998" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/activity_registro_motorizado.xml" value="0.1358695652173913" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/activity_splash.xml" value="0.1358695652173913" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/app_bar_motorizado.xml" value="0.5" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/auxiliar_listapedido.xml" value="0.33" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/auxiliar_pedidos_gestionados.xml" value="0.18854166666666666" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/layout/nav_header_motorizado.xml" value="0.18854166666666666" />
+        <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/menu/motorizado.xml" value="0.2777777777777778" />
       </map>
     </option>
   </component>

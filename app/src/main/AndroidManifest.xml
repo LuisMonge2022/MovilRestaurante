@@ -15,6 +15,17 @@
         android:theme="@style/Theme.ProyectoMovil"
         >
         <activity
+            android:name=".view.SplashActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.MotorizadoActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".view.LoginMotorizadoActivity"
+            android:exported="false" />
+        <activity
             android:name=".PasarellaActivity"
             android:exported="false" />
         <activity
