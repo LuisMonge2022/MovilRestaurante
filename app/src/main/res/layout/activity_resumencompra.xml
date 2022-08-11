@@ -118,12 +118,97 @@
             android:fontFamily="@font/archivo_black"
             android:text="IdProducto     Producto     Cantidad     Precio" />
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="170dp"
+            android:layout_marginRight="10dp">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
         <TextView
             android:id="@+id/textView34"
+            android:layout_width="85dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="280dp"
+            android:layout_marginTop="360dp"
+            android:layout_marginRight="10dp"
+            android:text="______________" />
+
+        <TextView
+            android:id="@+id/textView14"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="TextView" />
+            android:layout_height="20dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="390dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="Subtotal:" />
+
+        <TextView
+            android:id="@+id/tvsubtotal"
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="390dp"
+            android:layout_marginRight="10dp" />
+
+        <TextView
+            android:id="@+id/textView21"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="420dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="Delivery:" />
+
+        <TextView
+            android:id="@+id/textView24"
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="420dp"
+            android:text="5.00"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/textView36"
+            android:layout_width="165dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="440dp"
+            android:text="_________________________" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginLeft="200dp"
+            android:layout_marginTop="470dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="Total:" />
+
+        <TextView
+            android:id="@+id/tvtotal"
+            android:layout_width="70dp"
+            android:layout_height="20dp"
+            android:layout_marginLeft="290dp"
+            android:layout_marginTop="470dp" />
 
     </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/btnInicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/teal_200"
+        android:text="VOLVER A INICIO"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
