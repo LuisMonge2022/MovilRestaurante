@@ -246,7 +246,7 @@
                 android:layout_weight="1">
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/imgMisDatos"
                     android:layout_width="410dp"
                     android:layout_height="200dp"
                     android:layout_weight="1"

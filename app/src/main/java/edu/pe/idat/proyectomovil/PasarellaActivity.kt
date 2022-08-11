@@ -2,6 +2,7 @@ package edu.pe.idat.proyectomovil
 
 
 import android.app.ProgressDialog
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.InputFilter
@@ -14,6 +15,8 @@ import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.android.volley.VolleyError
+import com.android.volley.toolbox.HttpResponse
 import com.google.gson.Gson
 import edu.pe.idat.proyectomovil.Service.ClienteService
 import edu.pe.idat.proyectomovil.culqi.culqi_android.Culqi.*
@@ -69,7 +72,7 @@ class PasarellaActivity : AppCompatActivity() {
 
         btnPay = findViewById<View>(R.id.btn_pay) as Button
 
-        txtcvv.isEnabled = false
+        //txtcvv.isEnabled = false
 
         txtcardnumber.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence, start: Int, count: Int, after: Int) {}
@@ -86,17 +89,17 @@ class PasarellaActivity : AppCompatActivity() {
                 }
 
 
-                /*if (validation.luhn(text)) {
+                if (validation.luhn(text)) {
                     txtcardnumber.setBackgroundResource(R.drawable.border_sucess)
                 } else {
                     txtcardnumber.setBackgroundResource(R.drawable.border_error)
-                }*/
+                }
                 val cvv = validation.bin(text, kind_card)
                 if (cvv > 0) {
                     txtcvv.filters = arrayOf<InputFilter>(LengthFilter(cvv))
                     txtcvv.isEnabled = true
                 } else {
-                    txtcvv.isEnabled = false
+                    //txtcvv.isEnabled = false
                     txtcvv.text = ""
                 }
             }
@@ -148,29 +151,58 @@ class PasarellaActivity : AppCompatActivity() {
                         cargo.crearCargo(applicationContext,nvotoken,monto,txtemail.text.toString(),object:
                             CargoCallback {
                             override fun onSuccess(respuesta: JSONObject?) {
-                                val gson = Gson()
-                                val lista: CargoResponse =
-                                    gson.fromJson(respuesta.toString(),CargoResponse::class.java)
-                                val resp= lista.outcome.user_message
-                                Toast.makeText(applicationContext,"$resp",Toast.LENGTH_SHORT).show()
-                            }
 
-                            override fun onError(error: java.lang.Exception?) {
-                                Log.v("","Error: +${error}")
-                                Toast.makeText(applicationContext,"Fallaste otra vez",Toast.LENGTH_SHORT).show()
+                                val gson = Gson()
+                                val cargoresponse: CargoResponse =
+                                    gson.fromJson(respuesta.toString(),CargoResponse::class.java)
+                                if (cargoresponse != null) {
+                                    val resp = cargoresponse.outcome.user_message
+                                    Toast.makeText(applicationContext, "$resp", Toast.LENGTH_SHORT)
+                                        .show()
+                                    realizarPago()
+
+                                }else{
+                                    Toast.makeText(applicationContext, "estás aqui", Toast.LENGTH_SHORT)
+                                        .show()
+                                }
+                            }
+                            override fun onError(error: VolleyError) {
+
+                               if (error.networkResponse.data !=null){
+                                   val gson = Gson()
+                                   var body = String(error.networkResponse.data)
+                                   var errorCulqui: ErrorCulqui = gson.fromJson(body,ErrorCulqui::class.java)
+                                   Toast.makeText(applicationContext," ${errorCulqui.user_message}",Toast.LENGTH_LONG).show()
+                               }else{
+                                   Toast.makeText(applicationContext,"Error desconocido",Toast.LENGTH_SHORT).show()
+                               }
                             }
                         })
-
                     } catch (ex: Exception) {
                         progress.hide()
                     }
                     progress.hide()
                 }
-                override fun onError(error: Exception?) {
-                    progress.hide()
+                override fun onError(error: VolleyError) {
+                    if (error.networkResponse.data !=null){
+                        val gson = Gson()
+                        var body = String(error.networkResponse.data)
+                        var errorCulqui: ErrorCulqui = gson.fromJson(body,ErrorCulqui::class.java)
+                        Toast.makeText(applicationContext," ${errorCulqui.user_message}",Toast.LENGTH_LONG).show()
+                    }else{
+                        Toast.makeText(applicationContext,"Error desconocido",Toast.LENGTH_SHORT).show()
+                    }
                 }
             })
         }
+    }
+
+    private fun realizarPago() {
+        val intent = Intent(this,
+            ResumencompraActivity::class.java)
+        startActivity(intent)
+        Toast.makeText(applicationContext, "Bienvenido ", Toast.LENGTH_LONG).show()
+        finish()
     }
 
 }

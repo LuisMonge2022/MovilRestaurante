@@ -3,7 +3,7 @@ package edu.pe.idat.proyectomovil.model
 class ListaClientes : ArrayList<Cliente>()
 
 data class Cliente(
-    val codcliente: Int,
+    var codcliente: Int,
     val xapellido: String,
     val xcontrasenia: String,
     val xdireccion: String,

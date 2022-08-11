@@ -6,25 +6,30 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import edu.pe.idat.proyectomovil.databinding.ActivityDireccionBinding
+import edu.pe.idat.proyectomovil.model.Cliente
+import edu.pe.idat.proyectomovil.repository.Conexion
 
 
 class DireccionActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityDireccionBinding
-
+    private lateinit var cliente: Cliente
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_direccion)
 
-
+        cliente = Conexion(this).listarCliente()
         binding = ActivityDireccionBinding.inflate(layoutInflater)
         setContentView(binding.root)
         binding.btndireccion.setOnClickListener(this)
-        binding.tvdireccion.setOnClickListener(this)
+
         binding.ibregresarCarrito.setOnClickListener(this)
         binding.btnpagar.setOnClickListener(this)
 
+
+        binding.tvnombre.text= cliente.xnombre+ " "+cliente.xapellido
+        binding.tvdireccionA.text=cliente.xdireccion
         var nuevadireccion = intent.getStringExtra("nuevadireccion")
         if (nuevadireccion.isNullOrBlank()){
             nuevadireccion = "-"

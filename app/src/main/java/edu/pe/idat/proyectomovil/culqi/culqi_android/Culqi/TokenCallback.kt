@@ -1,5 +1,6 @@
 package edu.pe.idat.proyectomovil.culqi.culqi_android.Culqi
 
+import com.android.volley.VolleyError
 import org.json.JSONObject
 import java.lang.Exception
 
@@ -8,5 +9,5 @@ import java.lang.Exception
  */
 interface TokenCallback {
     fun onSuccess(token: JSONObject?)
-    fun onError(error: Exception?)
+    fun onError(error: VolleyError)
 }

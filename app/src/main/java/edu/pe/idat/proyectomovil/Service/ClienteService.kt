@@ -3,10 +3,7 @@ package edu.pe.idat.proyectomovil.Service
 
 import edu.pe.idat.proyectomovil.model.Cliente
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
-import retrofit2.http.Path
+import retrofit2.http.*
 
 interface ClienteService {
     @GET(value = "clientes")
@@ -17,5 +14,8 @@ interface ClienteService {
 
     @POST(value = "clientes/registrar")
     fun registrarCliente(@Body cliente: Cliente):Call<Void>
+
+    @PUT(value = "clientes")
+    fun actualizarCliente(@Body cliente: Cliente):Call<Void>
 
 }

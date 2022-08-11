@@ -12,6 +12,7 @@ import androidx.appcompat.R
 import edu.pe.idat.proyectomovil.Service.ProductoService
 import edu.pe.idat.proyectomovil.databinding.ActivityDescripcionBinding
 import edu.pe.idat.proyectomovil.model.Carrito
+import edu.pe.idat.proyectomovil.model.Cliente
 import edu.pe.idat.proyectomovil.model.Producto
 import edu.pe.idat.proyectomovil.repository.Conexion
 import edu.pe.idat.proyectomovil.utilitarios.RestEngine
@@ -22,6 +23,7 @@ import retrofit2.Response
 class DescripcionActivity : AppCompatActivity() , View.OnClickListener{
 
     private lateinit var binding: ActivityDescripcionBinding
+    private lateinit var cliente: Cliente
 
     private lateinit var producto: Producto
 
@@ -30,7 +32,7 @@ class DescripcionActivity : AppCompatActivity() , View.OnClickListener{
 
         binding = ActivityDescripcionBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
+        cliente= Conexion(this).listarCliente()
         val sp = binding.spncantidaddescripcion
         var lista = listOf<Int>(1,2,3,4,5,6,7,8,9,10)
 
@@ -79,14 +81,14 @@ class DescripcionActivity : AppCompatActivity() , View.OnClickListener{
 
     private fun agregarCarrito(producto: Producto) {
         var cantidad = binding.spncantidaddescripcion.selectedItem.toString().toInt()
-        val carrito=Carrito(producto.codproducto,producto.nombre,producto.descripcion,cantidad,producto.precio, cantidad * producto.precio)
+        val carrito=Carrito(producto.codproducto,producto.nombre,producto.descripcion,cantidad,producto.precio, cantidad * producto.precio, cliente.codcliente)
         var conexion = Conexion(this)
         var verificar= conexion.buscarCarrito(producto.codproducto)
         if (verificar.cantidad>0) {
             carrito.cantidad=carrito.cantidad+verificar.cantidad
             var resultado1= conexion.actualizarCarrito(carrito)
             if (resultado1 >0) {
-                Toast.makeText(this@DescripcionActivity, "Producto ingresado $resultado1", Toast.LENGTH_SHORT)
+                Toast.makeText(this@DescripcionActivity, "Producto ingresado ", Toast.LENGTH_SHORT)
                     .show()
             }else{
                 Toast.makeText(this@DescripcionActivity, "No se pudo agregar al carrito", Toast.LENGTH_SHORT)
@@ -95,7 +97,7 @@ class DescripcionActivity : AppCompatActivity() , View.OnClickListener{
         }else{
             var resultado=conexion.guardarCarrito(carrito)
             if (resultado >0) {
-                Toast.makeText(this@DescripcionActivity, "Producto ingresado $resultado", Toast.LENGTH_SHORT)
+                Toast.makeText(this@DescripcionActivity, "Producto ingresado", Toast.LENGTH_SHORT)
                     .show()
             }else{
                 Toast.makeText(this@DescripcionActivity, "No se pudo agregar al carrito", Toast.LENGTH_SHORT)

@@ -23,14 +23,10 @@ class MenuActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        ///setContentView(R.layout.activity_main)
+
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        val codigo = intent.getIntExtra("codigo",0)
-
-        cliente = Conexion(this).buscarCliente(codigo)
-
+        cliente = Conexion(this).listarCliente()
         binding.txtusuario.text= cliente.xnombre +" " +cliente.xapellido
         binding.btnloguiarse.setOnClickListener(this)
         binding.btnCarrito.setOnClickListener(this)
@@ -38,6 +34,7 @@ class MenuActivity : AppCompatActivity(),View.OnClickListener {
         binding.btnBrasa.setOnClickListener(this)
         binding.btnBroaster.setOnClickListener(this)
         binding.brnCriollo.setOnClickListener(this)
+        binding.imgMisDatos.setOnClickListener(this)
     }
 
     override fun onClick(v: View) {
@@ -48,9 +45,18 @@ class MenuActivity : AppCompatActivity(),View.OnClickListener {
             R.id.btnBrasa -> verProductos(2)
             R.id.btnBroaster -> verProductos(3)
             R.id.brnCriollo -> verProductos(4)
+            R.id.imgMisDatos -> verMisDatos()
 
         }
     }
+
+    private fun verMisDatos() {
+        var codigo= cliente.codcliente
+        val intent = Intent(this,
+            RegistroActivity::class.java).apply { putExtra("codigo",codigo) }
+        startActivity(intent)
+    }
+
     //SE AGREGO PARAMETRO CODIGO
     private fun verProductos(codigocategoria :Int ) {
 
@@ -68,17 +74,11 @@ class MenuActivity : AppCompatActivity(),View.OnClickListener {
     }
 
     private fun irLogin() {
-
-        var resul = Conexion(this).eliminarClienteDB(cliente.codcliente)
-
-        if (resul>0){
+        Conexion(this).eliminarTodoClienteDB()
             val intent = Intent(this,
                 LoginActivity::class.java)
             startActivity(intent)
             finish()
-        }else{
-            Toast.makeText(this@MenuActivity,"La cag",Toast.LENGTH_SHORT).show()
-        }
 
     }
 

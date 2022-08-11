@@ -11,11 +11,7 @@ import org.json.JSONObject
 import java.lang.Exception
 import java.util.HashMap
 
-/*data class Cargo(val amount: Int,
-                 val currency_code: String,
-                 val email:String,
-                 val source_id: String
-)*/
+
 
 
 class Cargo(private val api_key: String) {
@@ -53,7 +49,8 @@ class Cargo(private val api_key: String) {
                 try {
                     listener.onSuccess(response)
                 } catch (ex: Exception) {
-                    listener.onError(ex)
+                   //listener.onError(ex)
+                    //listener.OnSuccesError(response)
                     Log.v("", "ERROR: " + ex.message)
                 }
             },

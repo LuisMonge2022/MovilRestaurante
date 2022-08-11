@@ -2,6 +2,7 @@ package edu.pe.idat.proyectomovil.culqi.culqi_android.Culqi
 
 import android.content.Context
 import android.util.Log
+import android.widget.Toast
 import com.android.volley.*
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
@@ -38,7 +39,7 @@ class Token(private val api_key: String) {
                 try {
                     listener.onSuccess(response)
                 } catch (ex: Exception) {
-                    listener.onError(ex)
+                    Log.v("", "ERROR: " + ex.message)
                 }
             },
             Response.ErrorListener { error -> listener.onError(error) }) {

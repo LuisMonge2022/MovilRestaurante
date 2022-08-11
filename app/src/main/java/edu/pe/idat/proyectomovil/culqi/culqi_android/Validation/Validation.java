@@ -11,7 +11,7 @@ import java.util.Date;
 
 public class Validation {
 
-    public static boolean luhn(String number){
+    public boolean luhn(String number){
         int s1 = 0, s2 = 0;
         String reverse = new StringBuffer(number).reverse().toString();
         for(int i = 0 ;i < reverse.length();i++){
@@ -28,7 +28,7 @@ public class Validation {
         return (s1 + s2) % 10 == 0;
     }
 
-    public int bin(String bin, final TextView kind_card) {
+    public int bin(String bin, TextView kind_card) {
 
         if(bin.length() > 1) {
             if(Integer.valueOf(bin.substring(0,2)) == 41) {
@@ -52,7 +52,7 @@ public class Validation {
                 return 3;
             } else if(Integer.valueOf(bin.substring(0,2)) == 37){
                 kind_card.setText("AMEX");
-                return 3;
+                return 4;
             } else {
             }
         }
