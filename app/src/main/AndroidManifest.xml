@@ -6,35 +6,32 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ProyectoMovil"
-        >
-        <activity
-            android:name=".view.SplashActivity"
-            android:exported="false" />
+        android:theme="@style/Theme.ProyectoMovil">
 
         <activity
-            android:name=".view.MotorizadoActivity"
-            android:exported="false" />
-
-        <activity
-            android:name=".view.LoginMotorizadoActivity"
+            android:name=".view.motorizado.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".PasarellaActivity"
+            android:name=".view.motorizado.MotorizadoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ProyectoMovil.NoActionBar"/>
+        <activity
+            android:name=".view.motorizado.LoginMotorizadoActivity"
             android:exported="false" />
         <activity
-            android:name=".CarritoSplashActivity"
+            android:name=".view.cliente.PasarellaActivity"
             android:exported="false" />
         <activity
-            android:name=".DireccionActivity"
+            android:name=".view.cliente.CarritoSplashActivity"
             android:exported="false" />
-
+        <activity
+            android:name=".view.cliente.DireccionActivity"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -51,35 +48,43 @@
             android:value="AIzaSyCYE91oPxQtCQERUdiyuzqyUJY50N2inGw" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".view.cliente.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <activity
-            android:name=".ResumencompraActivity"
+            android:name=".view.cliente.ResumencompraActivity"
             android:exported="false">
+
+            <!--
+            intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter
+            -->
 
         </activity>
         <activity
-            android:name=".CarritoActivity"
+            android:name=".view.cliente.CarritoActivity"
             android:exported="false" />
         <activity
-            android:name=".DescripcionActivity"
+            android:name=".view.cliente.DescripcionActivity"
             android:exported="false" />
         <activity
-            android:name=".ListaProductosActivity"
+            android:name=".view.cliente.ListaProductosActivity"
             android:exported="false" />
         <activity
-            android:name=".CategoryActivity"
+            android:name=".view.motorizado.CategoryActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistroActivity"
+            android:name=".view.cliente.RegistroActivity"
             android:exported="false" />
         <activity
-            android:name=".MenuActivity"
+            android:name=".view.cliente.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
-            android:exported="true" >
+            android:name=".view.cliente.LoginActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

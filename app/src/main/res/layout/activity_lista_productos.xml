@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/marca_de_agua"
     android:orientation="vertical"
-    tools:context=".ListaProductosActivity">
+    tools:context=".view.cliente.ListaProductosActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

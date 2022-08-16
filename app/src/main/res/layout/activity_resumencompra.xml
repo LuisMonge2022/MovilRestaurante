@@ -1,214 +1,345 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?android:attr/colorPressedHighlight"
-    tools:context=".ResumencompraActivity">
+    android:background="@drawable/marca_de_agua"
+    android:orientation="vertical"
+    tools:context=".view.cliente.ResumencompraActivity">
 
     <LinearLayout
         android:id="@+id/linearLayout8"
-        android:layout_width="0dp"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"></LinearLayout>
-
-    <ImageView
-        android:id="@+id/imageView15"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8"
-        app:srcCompat="@drawable/marca_de_agua" />
-
-    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="550dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout8">
+        android:layout_height="50dp"
+        android:background="@android:color/holo_orange_dark"
+        android:orientation="horizontal">
 
-        <ScrollView
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        </ScrollView>
+            <LinearLayout
+                android:id="@+id/linearLayout9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
 
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/archivo_black"
-            android:text="Nombre usuario:"
-            android:textSize="16sp" />
+                android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView29"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp" />
+                <LinearLayout
+                    android:id="@+id/linerresnom"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView28"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="40dp"
-            android:fontFamily="@font/archivo_black"
-            android:text="Telefono:"
-            android:textSize="16sp" />
+                    <TextView
+                        android:id="@+id/textView25"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Nombre usuario:"
+                        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textView30"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginRight="10dp" />
+                    <TextView
+                        android:id="@+id/txtnombreResumen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView27"
-            android:layout_width="149dp"
-            android:layout_height="42dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="70dp"
-            android:fontFamily="@font/archivo_black"
-            android:text="Direccion de entrega:"
-            android:textSize="16sp" />
+                <LinearLayout
+                    android:id="@+id/linerresnom1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView31"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="170dp"
-            android:layout_marginTop="80dp"
-            android:layout_marginRight="10dp" />
+                    <TextView
+                        android:id="@+id/textView27"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Direccion de entrega:"
+                        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textView32"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="110dp"
-            android:layout_marginRight="10dp"
-            android:text="______________________________________________________" />
+                    <TextView
+                        android:id="@+id/txtdireccionResumen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/textView33"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="140dp"
-            android:layout_marginRight="10dp"
-            android:fontFamily="@font/archivo_black"
-            android:text="IdProducto     Producto     Cantidad     Precio" />
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="170dp"
-            android:layout_marginRight="10dp">
+                <LinearLayout
+                    android:id="@+id/linerresnom2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
 
-        </androidx.recyclerview.widget.RecyclerView>
+                    <TextView
+                        android:id="@+id/textView29"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Telefono:"
+                        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textView34"
-            android:layout_width="85dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="280dp"
-            android:layout_marginTop="360dp"
-            android:layout_marginRight="10dp"
-            android:text="______________" />
+                    <TextView
+                        android:id="@+id/txttelefonoResumen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="390dp"
-            android:fontFamily="@font/archivo_black"
-            android:text="Subtotal:" />
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
-        <TextView
-            android:id="@+id/tvsubtotal"
-            android:layout_width="70dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="290dp"
-            android:layout_marginTop="390dp"
-            android:layout_marginRight="10dp" />
+                <LinearLayout
+                    android:id="@+id/linerresnom3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="420dp"
-            android:fontFamily="@font/archivo_black"
-            android:text="Delivery:" />
+                    <TextView
+                        android:id="@+id/textView30"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Fecha de compra:"
+                        android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/textView24"
-            android:layout_width="70dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="290dp"
-            android:layout_marginTop="420dp"
-            android:text="5.00"
-            android:textAlignment="center" />
+                    <TextView
+                        android:id="@+id/txtfechaResumen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-        <TextView
-            android:id="@+id/textView36"
-            android:layout_width="165dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="440dp"
-            android:text="_________________________" />
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
 
-        <TextView
-            android:id="@+id/textView26"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="470dp"
-            android:fontFamily="@font/archivo_black"
-            android:text="Total:" />
+                <LinearLayout
+                    android:id="@+id/linerresnom4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/tvtotal"
-            android:layout_width="70dp"
-            android:layout_height="20dp"
-            android:layout_marginLeft="290dp"
-            android:layout_marginTop="470dp" />
+                    <TextView
+                        android:id="@+id/textView28"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_weight="1"
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Pedido N.-"
+                        android:textSize="16sp" />
 
-    </androidx.cardview.widget.CardView>
+                    <TextView
+                        android:id="@+id/txtcodpedido"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
 
-    <Button
-        android:id="@+id/btnInicio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/teal_200"
-        android:text="VOLVER A INICIO"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.0" />
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="@color/white"
+                    android:text="______________________________________________________" />
+
+                <LinearLayout
+                    android:id="@+id/linerresnom5"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textView33"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp"
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Id          Producto               Cantidad        Precio" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvdetalleResumenCompra"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginRight="10dp">
+
+                    </androidx.recyclerview.widget.RecyclerView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearLayout10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+
+                    android:layout_marginRight="10dp"
+
+                    android:background="@color/white"
+                    android:text="______________________________________________________" />
+
+                <LinearLayout
+                    android:id="@+id/linerresnom6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="120dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Subtotal:" />
+
+                    <TextView
+                        android:id="@+id/tvsubtotalResumen"
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linerresnom7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView21"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="120dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Delivery:" />
+
+                    <TextView
+                        android:id="@+id/textView24"
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+
+                        android:text="5.00"
+                        />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textView36"
+                    android:layout_width="165dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="200dp"
+                    android:background="@color/white"
+                    android:text="_________________________" />
+
+                <LinearLayout
+                    android:id="@+id/linerresnom8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/textView26"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="120dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+
+                        android:fontFamily="@font/archivo_black"
+                        android:text="Total:" />
+
+                    <TextView
+                        android:id="@+id/tvtotalResumen"
+                        android:layout_width="70dp"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:background="@color/white" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnInicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="100dp"
+                android:backgroundTint="@color/teal_200"
+                android:text="VOLVER A INICIO"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

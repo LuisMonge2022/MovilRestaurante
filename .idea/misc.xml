@@ -33,8 +33,17 @@
         <entry key="..\:/IDAT/6TO CICLO/MovilRestaurante/app/src/main/res/layout/activity_menu.xml" value="0.22" />
         <entry key="..\:/IDAT/6TO CICLO/MovilRestaurante/app/src/main/res/layout/activity_registro.xml" value="0.19635416666666666" />
         <entry key="..\:/IDAT/6TO CICLO/MovilRestaurante/app/src/main/res/layout/auxiliar_producto.xml" value="0.16666666666666666" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable-v24/ic_baseline_account_circle_24.xml" value="0.202" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable-v24/ic_baseline_assignment_ind_24.xml" value="0.202" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.225" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable/border.xml" value="0.3785" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable/ic_baseline_account_box_24.xml" value="0.202" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable/ic_baseline_alternate_email_24.xml" value="0.202" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.202" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable/ic_baseline_credit_card_24.xml" value="0.202" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.202" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable/ic_baseline_house_24.xml" value="0.202" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/drawable/ic_baseline_how_to_reg_24.xml" value="0.202" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/font/archivo_black.xml" value="0.4083333333333333" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_carrito.xml" value="0.378125" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_carrito_splash.xml" value="0.22" />
@@ -44,11 +53,25 @@
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_lista_productos.xml" value="0.2881773399014778" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_menu.xml" value="0.33" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_motorizado.xml" value="0.22" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_pasarella.xml" value="0.33" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_registro.xml" value="0.22" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_registro_motorizado.xml" value="0.19270833333333334" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/activity_resumencompra.xml" value="0.25" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/app_bar_motorizado.xml" value="0.22" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/auxiliar_carrito.xml" value="0.378125" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/auxiliar_listapedido.xml" value="0.19270833333333334" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/auxiliar_pedidos_gestionados.xml" value="0.378125" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/auxiliar_producto.xml" value="0.25" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/auxiliar_resumen.xml" value="0.2609375" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/content_motorizado.xml" value="0.33" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/fragment_lista_gestionados.xml" value="0.22708333333333333" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/fragment_lista_pedido.xml" value="0.19270833333333334" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/fragment_lista_pedidos.xml" value="0.17551020408163265" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/fragment_pedidos_gestionados.xml" value="0.19270833333333334" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/layout/nav_header_motorizado.xml" value="0.24114583333333334" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/menu/activity_main_drawer.xml" value="0.19270833333333334" />
+        <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/menu/motorizado.xml" value="0.19270833333333334" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.3785" />
         <entry key="..\:/Luis/PROYECTOS/MovilRestaurante/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.3785" />
         <entry key="..\:/Proyecto Movil 2/MovilRestaurante/app/src/main/res/drawable-v24/ic_baseline_account_circle_24.xml" value="0.1" />

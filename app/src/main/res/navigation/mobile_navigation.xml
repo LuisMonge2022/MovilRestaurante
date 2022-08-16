@@ -3,15 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@id/navlistapedidofrag">
+    app:startDestination="@id/navlistaGestionadosFragment">
+
     <fragment
-        android:id="@+id/navlistapedidofrag"
-        android:name="edu.pe.idat.proyectomovil.view.fragments.ListaPedidoFragment"
-        android:label="fragment_lista_pedido"
-        tools:layout="@layout/fragment_lista_pedido" />
+        android:id="@+id/navlistaPedidosFragment"
+        android:name="edu.pe.idat.proyectomovil.view.motorizado.fragments.ListaPedidosFragment"
+        android:label="fragment_lista_pedidos"
+        tools:layout="@layout/fragment_lista_pedidos" />
     <fragment
-        android:id="@+id/navvoluntariofrag"
-        android:name="edu.pe.idat.proyectomovil.view.fragments.VoluntarioFragment"
-        android:label="fragment_voluntario"
-        tools:layout="@layout/fragment_pedidos_gestionados" />
+        android:id="@+id/navlistaGestionadosFragment"
+        android:name="edu.pe.idat.proyectomovil.view.motorizado.fragments.ListaGestionadosFragment"
+        android:label="fragment_lista_gestionados"
+        tools:layout="@layout/fragment_lista_gestionados" />
+
 </navigation>

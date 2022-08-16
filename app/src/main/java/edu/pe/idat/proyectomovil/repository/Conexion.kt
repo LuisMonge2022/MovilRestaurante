@@ -117,6 +117,12 @@ class Conexion (var context: Context): SQLiteOpenHelper(context,"datoscliente",n
         }
     }
 
+    fun eliminarTodoCarritoDB(){
+        var db = this.writableDatabase
+        db.execSQL("Delete from carrito",)
+        db.close()
+    }
+
     fun guardarClienteDB(cliente: Cliente): Long {
         var db = this.writableDatabase
         val registro= ContentValues()

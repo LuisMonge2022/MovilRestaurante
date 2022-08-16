@@ -9,4 +9,4 @@
     android:layout_height="match_parent"
     map:uiZoomControls="true"
     map:uiCompass="true"
-    tools:context=".MapsActivity" />
+    tools:context=".view.cliente.MapsActivity" />
