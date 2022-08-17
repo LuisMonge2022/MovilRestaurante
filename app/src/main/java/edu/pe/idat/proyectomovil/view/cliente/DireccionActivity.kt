@@ -15,6 +15,7 @@ class DireccionActivity : AppCompatActivity(), View.OnClickListener {
 
     private lateinit var binding: ActivityDireccionBinding
     private lateinit var cliente: Cliente
+    private lateinit var ubicacion: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,13 +32,13 @@ class DireccionActivity : AppCompatActivity(), View.OnClickListener {
 
         binding.tvnombre.text= cliente.xnombre+ " "+cliente.xapellido
         binding.tvdireccionA.text=cliente.xdireccion
-        var nuevadireccion = intent.getStringExtra("nuevadireccion")
-        if (nuevadireccion.isNullOrBlank()){
-            nuevadireccion = "-"
+        ubicacion = intent.getStringExtra("ubicacion").toString()
+        if (ubicacion.isNullOrBlank()){
+            ubicacion = "Sin ubicación"
         }else{
-            nuevadireccion = nuevadireccion.substring(9)
+            ubicacion = ubicacion.substring(9)
         }
-        binding.tvdireccion.text = nuevadireccion
+        binding.tvubicacion.text = ubicacion
     }
 
     override fun onClick(v: View) {
@@ -50,7 +51,7 @@ class DireccionActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun escogerFormarPago() {
         val intent = Intent(this,
-            PasarellaActivity::class.java)
+            PasarellaActivity::class.java).apply  { putExtra("ubicacion",ubicacion) }
         startActivity(intent)
     }
 

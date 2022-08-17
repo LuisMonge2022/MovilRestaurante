@@ -12,14 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoMovil">
+        <activity
+            android:name=".view.InicioActivity"
+            android:exported="true">
+            <intent-filter>
+          <action android:name="android.intent.action.MAIN" />
 
+          <category android:name="android.intent.category.LAUNCHER" />
+      </intent-filter>
+
+
+        </activity>
+
+        <activity
+            android:name=".view.motorizado.EnvioActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.motorizado.EntregaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.motorizado.NoEntregaActivity"
+            android:exported="false" />
         <activity
             android:name=".view.motorizado.SplashActivity"
             android:exported="false" />
         <activity
             android:name=".view.motorizado.MotorizadoActivity"
             android:exported="false"
-            android:theme="@style/Theme.ProyectoMovil.NoActionBar"/>
+            android:theme="@style/Theme.ProyectoMovil.NoActionBar" />
         <activity
             android:name=".view.motorizado.LoginMotorizadoActivity"
             android:exported="false" />
@@ -45,7 +65,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyCYE91oPxQtCQERUdiyuzqyUJY50N2inGw" />
+            android:value="AIzaSyC_HjO-8slHtwpkWBKom6DAZGJgi88NU9g" />
 
         <activity
             android:name=".view.cliente.MapsActivity"
@@ -55,13 +75,7 @@
             android:name=".view.cliente.ResumencompraActivity"
             android:exported="false">
 
-            <!--
-            intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter
-            -->
 
         </activity>
         <activity
@@ -74,7 +88,7 @@
             android:name=".view.cliente.ListaProductosActivity"
             android:exported="false" />
         <activity
-            android:name=".view.motorizado.CategoryActivity"
+            android:name=".view.motorizado.PedidoActivity"
             android:exported="false" />
         <activity
             android:name=".view.cliente.RegistroActivity"
@@ -85,11 +99,11 @@
         <activity
             android:name=".view.cliente.LoginActivity"
             android:exported="true">
-            <intent-filter>
+            <!--intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter-->
         </activity>
 
         <meta-data

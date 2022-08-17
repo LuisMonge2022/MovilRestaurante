@@ -245,14 +245,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1">
 
+
                 <ImageView
                     android:id="@+id/imgMisDatos"
                     android:layout_width="410dp"
                     android:layout_height="200dp"
                     android:layout_weight="1"
                     android:scaleType="fitXY"
-                    app:srcCompat="@drawable/img1" />
-
+                    app:srcCompat="@drawable/ic_baseline_manage_accounts_24" />
 
                 <TextView
                     android:id="@+id/textView5"
@@ -261,8 +261,8 @@
                     android:layout_marginLeft="150dp"
                     android:layout_marginTop="100dp"
                     android:fontFamily="@font/archivo_black"
-                    android:text="COMBOS"
-                    android:textColor="@color/white"
+                    android:text="MIS DATOS"
+                    android:textColor="@color/black"
                     android:textSize="28sp" />
             </androidx.cardview.widget.CardView>
 
@@ -297,7 +297,7 @@
                 android:layout_weight="1">
 
                 <ImageView
-                    android:id="@+id/imageView12"
+                    android:id="@+id/imgDelivery"
                     android:layout_width="410dp"
                     android:layout_height="200dp"
                     android:layout_weight="1"

@@ -50,11 +50,11 @@ class PasarellaActivity : AppCompatActivity() {
     private lateinit var result:TextView
     private lateinit var btnPay: Button
     private lateinit var txtmonto: TextView
-
+    private lateinit var ubicacion: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_pasarella)
-
+        ubicacion= intent.getStringExtra("ubicacion").toString()
         cliente= Conexion(this).listarCliente()
         listaCarrito=Conexion(this).listarCarrito(cliente.codcliente)
         var monto= 0.0
@@ -253,7 +253,7 @@ class PasarellaActivity : AppCompatActivity() {
             listadetalle.add(detalle)
             monto= monto +carrito.subtotal
         }
-        val pedido = Pedido(cliente.codcliente,0,0, listadetalle,cliente.xdireccion,"","",monto)
+        val pedido = Pedido(cliente.codcliente,0,0, listadetalle,cliente.xdireccion,ubicacion,"","","",monto)
         val pedidoService : PedidoService = RestEngine.getRestEngine().create(PedidoService::class.java)
         val result: Call<Void> = pedidoService.registrarPedido(pedido)
         result.enqueue(object : Callback<Void>{

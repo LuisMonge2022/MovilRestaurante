@@ -15,4 +15,10 @@ interface PedidoService {
 
     @GET(value = "pedido/listarxEnvio")
     fun listarPedidosporEnvio(@Query(value="codenvio")codcliente:Int):Call<ArrayList<Pedido>>
+
+    @GET(value = "pedido/buscar")
+    fun buscarPedido(@Query(value="codpedido")codpedido:Int):Call<Pedido>
+
+    @PUT(value = "pedido")
+    fun actualizarPedido(@Body pedido: Pedido): Call<Void>
 }

@@ -12,6 +12,7 @@ import edu.pe.idat.proyectomovil.model.Cliente
 import edu.pe.idat.proyectomovil.Service.ClienteService
 import edu.pe.idat.proyectomovil.repository.Conexion
 import edu.pe.idat.proyectomovil.utilitarios.RestEngine
+import edu.pe.idat.proyectomovil.view.InicioActivity
 import edu.pe.idat.proyectomovil.view.motorizado.SplashActivity
 import retrofit2.Call
 import retrofit2.Callback
@@ -53,7 +54,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun irLoginMotorizado() {
         val intent = Intent(this,
-            SplashActivity::class.java)
+            InicioActivity::class.java)
         startActivity(intent)
 
         finish()

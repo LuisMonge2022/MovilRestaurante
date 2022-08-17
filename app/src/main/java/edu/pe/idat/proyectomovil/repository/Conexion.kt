@@ -18,6 +18,10 @@ class Conexion (var context: Context): SQLiteOpenHelper(context,"datoscliente",n
                 "idcliente INTEGER, apellido text, contrasenia text, direccion text, dni text ,correo text, nombre text, telefono integer)"
         db?.execSQL(tablacliente)
 
+        var tablaempleado = "CREATE TABLE EMPLEADO (id INTEGER not null primary key autoincrement, " +
+                "idempleado INTEGER,nombre text, apellido text, dni text , codenvio integer)"
+        db?.execSQL(tablaempleado)
+
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
@@ -215,4 +219,55 @@ class Conexion (var context: Context): SQLiteOpenHelper(context,"datoscliente",n
     }
 
 
+    fun guardarEmpleadoDB(empleado: Empleadom): Long {
+        var db = this.writableDatabase
+        val registro= ContentValues()
+        registro.put("idempleado",empleado.codempleado)
+        registro.put("nombre", empleado.nombre)
+        registro.put("apellido", empleado.apellido)
+        registro.put("dni", empleado.dni)
+        registro.put("codenvio", 0)
+
+        var resultado=db.insert("empleado",null,registro)
+        db.close()
+        return resultado
+    }
+
+    fun eliminarTodoEmpleadoDB(){
+        var db = this.writableDatabase
+        db.execSQL("Delete from empleado",)
+        db.close()
+    }
+
+    fun actualizarEmpleadoDB(empleado: Empleadom): Int{
+        var db = this.writableDatabase
+        val registro= ContentValues()
+        registro.put("idempleado",empleado.codempleado)
+        registro.put("nombre", empleado.nombre)
+        registro.put("apellido", empleado.apellido)
+        registro.put("dni", empleado.dni)
+        registro.put("codenvio", 0)
+        var args : Array<String> = arrayOf<String>(empleado.codempleado.toString())
+        val resultado = db.update("empleado",registro,"idempleado=?",args)
+        db.close()
+        return resultado
+    }
+
+    fun listarEmpleado():Empleadom{
+        var db= this.writableDatabase
+        var sql= "Select * from empleado"
+        var respuesta = db.rawQuery(sql,null)
+        if (respuesta.moveToFirst()){
+            var id= respuesta.getInt(1)
+            var nomb=   respuesta.getString(2)
+            var apel = respuesta.getString(3)
+            var dni= respuesta.getString(4)
+            var envio = respuesta.getInt(5)
+
+            var empleado =Empleadom(apel,0,0,id,"",dni,"",nomb )
+            return empleado
+        }else{
+            return Empleadom("",0,0,0,"","","","")
+        }
+    }
 }

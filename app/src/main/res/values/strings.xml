@@ -45,7 +45,7 @@
     <string name="valetpassword">Ingrese Password</string>
     <string name="valbtnlogin">INGRESAR</string>
     <string name="valchkguardardatos">¿Guardar Datos?</string>
-    <string name="valbtnregistrarme">Registrar Motorizado</string>
+    <string name="valbtnregistrarme">Regresar al Inicio</string>
 
     //textos pegados
     <string name="tvtituloregistro2">REGISTRARME</string>
@@ -64,5 +64,8 @@
     <string name="valtvesuvoluntario">"GRACIAS YA ERES PARTE DE NUESTRA RED DE MOTORIZADOS "</string>
     <string name="valbtnregistro">REGISTRAR MOTORIZADO</string>
     <string name="vallistaprincipalmotorizado">Pedidos por Gestionar</string>
+    <string name="valbtnentrega">Entrega</string>
+    <string name="valbbtnnoentrega">No Entrega</string>
+    <string name="valtxttituloEnvio">Ingresa tu Código de Envío</string>
 
 </resources>

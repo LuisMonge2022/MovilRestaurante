@@ -3,10 +3,12 @@ package edu.pe.idat.proyectomovil.model
 data class Pedido(
     var codcliente: Int,
     val codenvio: Int,
-    val codpedido: Int,
+    var codpedido: Int,
     val detalle: List<Detalle>,
     val direccion: String,
-    val estadopedido: String,
+    val ubicacion: String,
+    var estadopedido: String,
+    var motivo: String,
     val fechacreacion: String,
     val monto: Double
 )

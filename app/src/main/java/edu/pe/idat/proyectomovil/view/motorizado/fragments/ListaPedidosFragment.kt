@@ -1,5 +1,6 @@
 package edu.pe.idat.proyectomovil.view.motorizado.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,14 +8,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import edu.pe.idat.proyectomovil.R
-import edu.pe.idat.proyectomovil.Service.ClienteService
+
 import edu.pe.idat.proyectomovil.Service.PedidoService
 import edu.pe.idat.proyectomovil.databinding.FragmentListaPedidosBinding
 import edu.pe.idat.proyectomovil.model.Detalle
 import edu.pe.idat.proyectomovil.model.Pedido
 import edu.pe.idat.proyectomovil.utilitarios.RestEngine
+
+import edu.pe.idat.proyectomovil.view.motorizado.PedidoActivity
 import edu.pe.idat.proyectomovil.view.motorizado.adapter.ListaPedidoAdapter
+import kotlinx.android.synthetic.main.fragment_lista_pedidos.*
+
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -22,21 +28,26 @@ import retrofit2.Response
 
 class ListaPedidosFragment : Fragment() {
 
-    private var _binding: FragmentListaPedidosBinding?= null
-
-    private val binding get() = _binding!!
-
-    private val lista2= ArrayList<Pedido>()
+    private lateinit var adaptador: ListaPedidoAdapter
+    private lateinit var recycler: RecyclerView
+    private var lista2= ArrayList<Pedido>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentListaPedidosBinding.inflate(inflater,container, false)
+
+        val view =inflater.inflate(R.layout.fragment_lista_pedidos, container, false)
+        recycler = view.findViewById<RecyclerView>(R.id.rvlistapedidos)
         traerPedidos (0)
-        binding.rvlistapedidos.layoutManager = LinearLayoutManager(requireActivity())
-        //binding.rvlistapedidos.adapter = ListaPedidoAdapter(lista)
-        return binding.root
+
+        return view
+    }
+
+    private fun traerRecycler() {
+        recycler.layoutManager= LinearLayoutManager(requireActivity())
+        adaptador = ListaPedidoAdapter(lista2)
+        recycler.adapter = adaptador
     }
 
     private fun traerPedidos(i: Int) {
@@ -50,17 +61,13 @@ class ListaPedidosFragment : Fragment() {
                 call: Call<ArrayList<Pedido>>,
                 response: Response<ArrayList<Pedido>>
             ) {
-                var lista = response.body()
-                if (lista?.isEmpty()==false){
-                    binding.rvlistapedidos.adapter = ListaPedidoAdapter(lista)
-                }else{
-                    lista2.add(Pedido(12,1,2, listOf(Detalle(1,2,2,25.0,25.0)),"aqui","biwn","20-10-022",45.0))
-                    binding.rvlistapedidos.adapter = ListaPedidoAdapter(lista2)
-                }
+                lista2 = response.body()!!
+                traerRecycler ()
             }
 
             override fun onFailure(call: Call<ArrayList<Pedido>>, t: Throwable) {
-                Toast.makeText(context,"NOOO",Toast.LENGTH_LONG).show()
+                lista2.add(Pedido(12,1,2, listOf(Detalle(1,2,2,25.0,25.0)),"aqui","biwn","20-10-022","","",45.0))
+                traerRecycler ()
             }
 
         })

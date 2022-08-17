@@ -74,7 +74,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
                     Toast.makeText(this@MapsActivity, "Se agrego direccion", Toast.LENGTH_SHORT)
                         .show()
                     val intent = Intent(this@MapsActivity,
-                        DireccionActivity::class.java).apply { putExtra("nuevadireccion",posicion)}
+                        DireccionActivity::class.java).apply { putExtra("ubicacion",posicion)}
                     startActivity(intent)
                     finish()
                 }

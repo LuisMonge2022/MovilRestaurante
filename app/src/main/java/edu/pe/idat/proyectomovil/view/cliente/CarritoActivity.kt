@@ -85,7 +85,7 @@ class CarritoActivity : AppCompatActivity() , View.OnClickListener{
 
     private fun continuarCompra() {
         val intent = Intent(this,
-            DireccionActivity::class.java)
+            DireccionActivity::class.java).apply  { putExtra("ubicacion","") }
         startActivity(intent)
     }
 

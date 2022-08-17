@@ -142,11 +142,11 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="190dp"
             android:fontFamily="@font/archivo_black"
-            android:text="Direccion entrega:"
+            android:text="Ubicación"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvdireccion"
+            android:id="@+id/tvubicacion"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginLeft="10dp"
@@ -163,7 +163,7 @@
             android:layout_marginRight="10dp"
             android:backgroundTint="?android:attr/colorPressedHighlight"
             android:fontFamily="sans-serif"
-            android:text="Nueva direccion"
+            android:text="Ingresar ubicación"
             android:textColor="@color/black" />
 
         <Button
