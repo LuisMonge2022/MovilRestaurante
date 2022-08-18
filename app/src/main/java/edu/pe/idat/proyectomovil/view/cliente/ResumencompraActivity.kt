@@ -72,10 +72,18 @@ class ResumencompraActivity : AppCompatActivity() , View.OnClickListener{
                     }
                     traerRecyclerResumen(listadetalle)
                     binding.txtfechaResumen.text=pedido?.fechacreacion
-                    binding.tvsubtotalResumen.text=pedido?.monto.toString()
-                    binding.tvtotalResumen.text=pedido?.monto.toString()
                     binding.txtdireccionResumen.text=pedido?.direccion
                     binding.txtcodpedido.text=pedido?.codpedido.toString()
+                    //suma=Math.round(suma*100.00)/100.00
+                    var subtotal = pedido.monto/1.18
+                    subtotal=Math.round(subtotal*100.00)/100.00
+                    var total = pedido.monto
+                    total=Math.round(total*100.00)/100.00
+                    var igv = total-subtotal
+                    igv=Math.round(igv*100.00)/100.00
+                    binding.tvsubtotalResumen.text=subtotal.toString()
+                    binding.tvtotalResumen.text=total.toString()
+                    binding.tvIGV.text=igv.toString()
                 }else{
                     binding.txtfechaResumen.text="pedido?.fechacreacion"
                     binding.tvsubtotalResumen.text="pedido.fechacreacion"

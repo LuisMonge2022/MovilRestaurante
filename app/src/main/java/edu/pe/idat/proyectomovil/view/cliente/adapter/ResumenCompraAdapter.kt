@@ -48,7 +48,7 @@ class ResumenCompraAdapter (val listadetalle:List<Detalle>): RecyclerView.Adapte
             })
             view.tvidProducto.text = detalle.codproducto.toString()
             view.tvCantidad.text =detalle.cantidad.toString()
-            view.tvPrecio.text=detalle.precio.toString()
+            view.tvPrecio.text=detalle.subtotal.toString()
 
         }
 
